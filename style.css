@@ -1,3 +1,9 @@
+@media (min-width: 500px) {
+    p {
+        background-color: brown;
+    }
+}
+
 img {
     width: 100%;
 }
