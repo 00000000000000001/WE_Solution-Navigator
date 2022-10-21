@@ -1,62 +1,102 @@
 <!DOCTYPE html>
 <head>
-<title> Solution-Navigator </title>
-<link rel="stylesheet" href="css/style.css">
-<script src="js/jahr.js"></script>
-<style>
-
-</style>
+    <title>
+        Solution-Navigator: Main Page
+    </title>
+    <style>
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 5em repeat(10, 1fr) 4em;
+            border: dotted red;
+        }
+        .header{
+            display: flex;
+            background-color: red;
+            grid-column: 1/13;
+            grid-row: 5em;
+            justify-content: center;
+        }
+        .nav{
+            background-color: blue;
+            display: flex;
+            grid-column: 1/13;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .button{
+            background-color: orange;
+            display: flex;
+            justify-content: center;
+            border: solid black;
+        }
+        a{
+            text-decoration: none;
+        }
+        a .button{
+            display: flex;
+            color: black;
+            justify-content: center;
+        }
+        .button{
+            padding: 0.3em;
+            padding-left: 3vw;
+            padding-right: 3vw;
+        }
+        .article{
+            background-color: greenyellow;
+            display: flex;
+            grid-column: 1/13;
+            grid-row: 3/12;
+        }
+        .footer{
+            background-color: magenta;
+            display: flex;
+            grid-column: 1/13;
+            grid-row: 12/13;
+        }
+        @media (min-width: 700px) {
+            .nav{
+                grid-column: 1/4;
+                grid-row: 5em/12;
+            }
+            .article{
+                grid-column: 4/13;
+                grid-row: 2/12;
+            }
+        }
+        @media (min-width: 1000px) {
+            .nav{
+                flex-direction: row;
+                grid-column: 1/13;
+                justify-content: center;
+            }
+            .article{
+                grid-column: 1/13;
+                grid-row: 3/12;
+            }
+        }
+    </style>
 </head>
-<body onLoad="jahr()">
-    <main>
-        <h2>Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?</h2>
-        <p>
-            Im Jahre 1989 beginnt Tim-Berners-Lee als Mitarbeiter des CERN mit der Entwicklung eines Informations-Management-Systems
-            basierend auf seinem Konzept "<a href="http://info.cern.ch/hypertext/WWW/TheProject.html">HyperText and CERN</a>". 
-            Dafür entwickelte er eine Vielzahl verschiedener Technologien im Alleingang, um sich das nötige Fundament zu schaffen.   
-            Zu TBL's Erfindungen gehören HTTP, HTML, URL, WWW, Browser, Server und eine Suchmaschine.
-            Als er 1991 sein WWW-Konzept bei der weltgrößten Hypertext-Konferenz einreicht, stößt er auf Ablehnung.
-            Das Konzept sei zu vage und man wünsche sich eine integere Lösung für die Verknüpfung verschiedener Informationen
-            zwischen Computersystemem, welche die Möglichkeit von 'broken links' per Design ablehnt. Dem entsprechende
-            Technologien seien in der Wissenschaft bereits erforscht worden, sagte man ihm.
-        </p>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Solution-Navigator</h1>
+        </header>
+        <nav class="nav">
+            
+            <a href="html/solution_1.html"><span class="button">Solution 1</span></a>
+            <a href="html/solution_1.html"><span class="button">Solution 2</span></a>
+            <a href="html/solution_1.html"><span class="button">Solution 3</span></a>
+            <a href="html/solution_1.html"><span class="button">Solution 4</span></a>
+            <a href="html/solution_1.html"><span class="button">Solution 5</span></a>
 
-            <img src="resources/tim-berners-lee.jpeg">
-            <br>
-            <small>Tim-Berners-Lee Ende der 80er im CERN</small>
-
-        <h2>Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?</h2>
-        <p>
-            Heute, <span id="jahr"></span> Jahre später, finden wir eine Menschheit vor, 
-            die ohne das WWW nicht mehr exisiteren kann.
-            Seine Funktionalität wird darüber hinaus ständig durch sich verbessernde, 
-            im Ursprung orthogonal zu einander ausgerichtete Technologien erweitert. 
-            Ein weiterer Hauptgrund für das ungehemmnte Wachstum des WWW's ist seine
-            Dezentralität. Jedermensch ist nun in der Lage, seinen eigenen Server aufzusetzen um
-            mit einer Webseite die Öffentlichkeit erreichen und erweitern zu können. 
-            Ermöglicht darüberhinaus auch dadurch, dass alle dazu nötigen Technologien patentfrei sind. 
-
- 
-
-            <!-- <ul>
-                <li>
-                    Evolvierbarkeit; Orthogonale Technologien, die unabhängig voneinander weiterentwickelt werden können.
-                </li>
-                <li>
-                    Dezentralität
-                </li>
-                <li>
-                    Offenheit
-                </li>
-            </ul> -->
-        </p>
-        <h2>Was wäre der Preis für die garantierte Verhinderung von “broken links”?</h2>
-        <p>
-            <!-- <ul>
-                <li>
-                    Zentrale Verwaltung der Datensätze
-                </li>
-            </ul> -->
-        </p>
-    </main>
+        </nav>
+        <article class="article"></article>
+        <footer class="footer"></footer>
+    </div>
 </body>
