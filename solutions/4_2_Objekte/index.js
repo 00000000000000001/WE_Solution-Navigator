@@ -1,35 +1,47 @@
-var Person = {
-   
-};
-
 var Auto = {
     id : "",
-    getID: function(){
-        return this.id;
-    },
+    __proto__ : Person,
 };
 
-var mark = Object.create(Person);
-var julia = Object.create(Person);
+var Person = {
+    name : "",
+    __proto__ : Auto,
+};
+
 var a1 = Object.create(Auto);
-a1.id = "a1";
 var a2 = Object.create(Auto);
-a2.id = "a2";
-var a3 = Object.create(Auto);
-a3.id = "a3";
 
-// Mark besitzt Auto 1 und Auto 2. 
+a1.id = "Auto 1";
+a2.id = "Auto 2";
 
-mark.autos = [a1, a2];
+var p1 = Object.create(Person);
+var p2 = Object.create(Person);
 
-// Julia besitzt Auto 3. 
+p1.name = "Horst";
+p2.name = "Maria";
 
-julia.autos = [a3];
+a1.__proto__ = p1;
+a2.__proto__ = p2;
+a2.__proto__ = p1;
 
-// ausgeben
-console.log("Marks Autos:");
-console.log(mark.autos[0].getID());
-console.log(mark.autos[1].getID());
+// curr = Object.getPrototypeOf(a1);
+// console.log(curr);
+function conflict(auto){
+    var allPersons = []
+    , curr = auto
+    do{
+        // if (!allPersons.includes(curr.besitzer)){
+            allPersons.push(curr);
+        // } else{
+        //     return true;
+        // }
+        // console.log(curr.id);
+        
+    } while(curr = Object.getPrototypeOf(curr))
+    return allPersons;
+}
 
-console.log("Julias Autos:");
-console.log(julia.autos[0].getID());
+// auf Konflikte testen
+
+// conflict(a2);
+console.log(conflict(a2));
