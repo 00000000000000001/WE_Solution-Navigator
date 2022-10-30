@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+    <head>
+        <title>3_1_Responsiv mit Flexbox Desktop-First</title>
+        <style>
+
+            *{
+                box-sizing: border-box;
+            }
+
+            .container{
+                display: flex;
+                flex-wrap: wrap;
+                margin: 0 auto;
+                --columns: 12;
+            }
+
+            .column {
+                --width: 0; /* default value */
+                flex-basis: calc(var(--width) / var(--columns) * 100%);
+            }
+
+            .nav{
+                background-color: red;
+                --width: 12;
+                height: 10rem;
+            }
+
+            .left{
+                background-color: greenyellow;
+                --width: 2;
+                height: 33rem;
+            }
+
+            .article{
+                background-color: blue;
+                --width: 8;
+                height: 33rem;
+            }
+
+            .right{
+                background-color: magenta;
+                --width: 2;
+                height: 33rem;
+            }
+
+            @media (max-width: 700px) {
+                .nav{
+                    --width: 12;
+                }
+
+                .left{
+                    --width: 4;
+                }
+
+                .article{
+                    --width: 8;
+                }
+
+                .right{
+                    --width: 12;
+                    height: 10rem;
+                }
+            }
+
+            @media (max-width: 500px) {
+                .nav{
+                    --width: 12;
+                }
+
+                .left{
+                    --width: 12;
+                    height: 10rem;
+                }
+
+                .article{
+                    --width: 12;
+                }
+
+                .right{
+                    --width: 12;
+                    height: 10rem;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="nav column">nav</nav>
+            <aside class="left column">left</aside>
+            <article class="article column">article</article>
+            <aside class="right column">right</aside>
+        </div>
+    </body>
+</html>

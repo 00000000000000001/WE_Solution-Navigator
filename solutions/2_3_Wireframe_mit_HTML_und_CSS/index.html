@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<head>
+<title> Demo </title>
+    <style>
+        #left_panel {
+            box-sizing: border-box;
+            text-align: right;
+            display: inline-block;
+            width: 49%;
+            vertical-align: top;
+            padding-right: 1em;
+        }
+
+        #right_panel {
+            box-sizing: border-box;
+            text-align: left;
+            display: inline-block;
+            width: 50%;
+        }
+
+        .form {
+            margin: 1em;
+            border-radius: 1mm;
+            padding: 2em;
+        }
+
+        .panel {
+            padding: 2mm;
+        }
+    </style>
+</head>
+<body style="background-color: #b2d6d1; text-align: center;">
+<h1>Survey Form</h1>
+<div class="form" style="background-color: #fafafa">
+    <div class="panel">
+        <label>Let us know how we can improve freeCodeCamp</label>
+    </div>
+
+    <div class="panel">
+        <div class="inner" id="left_panel">
+            <label>* Name:</label>
+        </div>
+        <div class="inner" id="right_panel">
+            <input type="text">
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="inner" id="left_panel">
+            <label>* Email:</label>
+        </div>
+        <div class="inner" id="right_panel">
+            <input type="text">
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="inner" id="left_panel">
+            <label>* Age:</label>
+        </div>
+        <div class"inner" id="right_panel">
+            <input type="number">
+        </div>
+    </div>
+    
+    <div class="panel">
+        <div class="inner" id="left_panel">
+            <label>Which option best describes your current role?</label>
+        </div>
+        <div class="inner" id="right_panel">
+            <select name="role">
+                <option value="student">Student</option>
+                <option value="arbeitslos">Arbeitslos</option>
+                <option value="angestellt">Angestellt</option>
+                <option value="selbstständig">Selbstständig</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="inner" id="left_panel">
+            <label>* How likely is that you would recommend freeCodeCamp to a friend?</label>
+        </div>
+        <div class="inner" id="right_panel">
+            <input type="radio" id="definitly" name="recommendation" value="Definitly">
+                <label for="definitly">Definitly</label><br>
+                <input type="radio" id="maybe" name="recommendation" value="Maybe">
+                <label for="maybe">Maybe</label><br>
+                <input type="radio" id="not_sure" name="recommendation" value="Not sure">
+                <label for="not_sure">Not sure</label>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="inner" id="left_panel">
+            <label>What do you like most in FCC:</label>
+        </div>
+        <div class="inner" id="right_panel">
+            <select name="role">
+                <option value="none" selected disabled hidden>Select an Option</option>
+                <option value="ice">Ice</option>
+                <option value="cars">Cars</option>
+                <option value="doors">Doors</option>
+                <option value="people">People</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="panel">
+        <div class="inner" id="left_panel">
+            <label>Things that should be improved in the future (Check all that apply):</label>
+        </div>
+        <div class="inner" id="right_panel">
+            <input type="checkbox">
+            <label>Front-end Projects</label><br>
+            <input type="checkbox">
+            <label>Back-end Projects</label><br>
+            <input type="checkbox">
+            <label>Data Visualization</label>
+        </div>
+    </div>
+
+</div>
+</body>

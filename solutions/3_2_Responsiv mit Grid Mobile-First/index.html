@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            3_3_Responsiv mit Grid Mobile-First
+        </title>
+        <style>
+
+            .container{
+                border: thin dashed red;
+                min-height: 10vh;
+                display: grid;
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: repeat(6, 1fr);
+            }
+
+            .nav{
+                grid-column: 1/7;
+                grid-row: 1/2;
+                background-color: red;
+                height: 10rem;
+            }
+
+            .left{
+                grid-column: 1/7;
+                grid-row: 2/3;
+                background-color: greenyellow;
+            }
+
+            .article{
+                grid-column: 1/7;
+                grid-row: 3/6;
+                background-color: blue;
+            }
+
+            .right{
+                grid-column: 1/7;
+                grid-row: 6/7;
+                background-color: magenta;
+            }
+
+            @media (min-width: 700px) {
+                .nav{
+                    grid-column: 1/7;
+                    grid-row: 1/2;
+                    background-color: red;
+                    height: 10rem;
+                }
+
+                .left{
+                    grid-column: 1/2;
+                    grid-row: 2/7;
+                    background-color: greenyellow;
+                }
+
+                .article{
+                    grid-column: 2/7;
+                    grid-row: 2/6;
+                    background-color: blue;
+                }
+
+                .right{
+                    grid-column: 1/7;
+                    grid-row: 6/7;
+                    background-color: magenta;
+                }
+            }
+
+            @media (min-width: 1000px) {
+                .nav{
+                    grid-column: 1/7;
+                    grid-row: 1/2;
+                    background-color: red;
+                    height: 10rem;
+                }
+
+                .left{
+                    grid-column: 1/2;
+                    grid-row: 2/7;
+                    background-color: greenyellow;
+                }
+
+                .article{
+                    grid-column: 2/6 ;
+                    grid-row: 2/7;
+                    background-color: blue;
+                }
+
+                .right{
+                    grid-column: 6/7;
+                    grid-row: 2/7;
+                    background-color: magenta;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="nav">nav</nav>
+            <aside class="left">left</aside>
+            <article class="article">article</article>
+            <aside class="right">right</aside>
+        </div>
+    </body>
+</html>

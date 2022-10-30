@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+    <head>
+        <title>
+            3.3. Responsiv mit Grid
+        </title>
+        <style>
+            *{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .container{
+                display: grid;
+                grid-template-columns: repeat(12, 1fr);
+                grid-template-rows: repeat(12, 1fr);
+                /* border: dotted red; */
+                background-color: #ebeae6;
+            }
+            .nav{
+                display: flex;
+                grid-column: 1/13;
+                grid-row: 1/2;
+                background-color: black;
+                align-items: center;
+                justify-content: center;
+            }
+            .nav a{
+                color: white;
+            }
+            .header{
+                display: flex;
+                grid-column: 1/13;
+                grid-row: 2/3;
+                /* align-content: center; */
+                justify-content: center;
+            }
+            .article{
+                display: flex;
+                grid-column: 1/6;
+                grid-row: 3/10;
+                justify-content: center;
+            }
+            .right{
+                display: flex;
+                grid-column: 6/13;
+                grid-row: 3/8;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .footer{
+                display: flex;
+                grid-column: 1/13;
+                grid-row: 10/13;
+                background-color: black;
+                color: white;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            a{
+                margin: 0.5em;
+                text-decoration: none;
+            }
+            .button{
+                display: flex;
+                background-color: orange;
+                color: white;
+                align-items: center;
+                justify-content: center;
+                border-radius: 3px;
+                padding: 0.5em;
+                padding-left: 11%;
+                padding-right: 11%;
+            }
+            img{
+                height: 100%;
+                max-height: 50vh;
+                border: 1px solid black;
+                border-radius: 5px;
+                margin-bottom: 1em;
+            }
+            .header p{
+                /* font-size: 19px; */
+            }
+/* 
+            @media (max-width: 700px) {
+
+            } */
+
+            @media (max-width: 500px) {
+                .article{
+                    display: flex;
+                    grid-column: 1/13;
+                    grid-row: 3/8;
+                    justify-content: center;
+                }
+                .right{
+                    display: flex;
+                    grid-column: 1/13;
+                    grid-row: 7/12;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+                .footer{
+                    display: flex;
+                    grid-column: 1/13;
+                    grid-row: 11/13;
+                    background-color: black;
+                    color: white;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="nav">
+                <a href="">The book series</a>
+                <a href="">Testimonials</a>
+                <a href="">The Author</a>
+                <a href="">Free resources</a>
+            </nav>
+            <header class="header">
+                <p>You dont know JavaScript</p>
+            </header>
+            <article class="article">
+                <img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png">
+            </article>
+            <aside class="right">
+                <p>Don't just drift through Javascript.</p>
+                <p>Understand how Javascript works</p>
+                <p>Start your journey through the bumpy side of Javascript</p>
+                <div class="button">ORDER YOUR COPY NOW</div>
+            </aside>
+            <footer class="footer">
+                <p>The first ebook in the book series is absolutely free.</p>
+                <div class="button">FIND OUT MORE ABOUT THIS OFFER</div>
+            </footer>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,16 @@
+.picture {
+    visibility: hidden;
+}
+
+  .checkbox:checked ~ .border > .picture{
+    visibility: visible;
+}
+
+.border {
+    border: solid;
+    padding: 1ch;
+}
+
+img {
+    width: 100%;
+}
