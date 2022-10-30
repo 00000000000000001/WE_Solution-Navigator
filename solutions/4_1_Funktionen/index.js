@@ -3,7 +3,30 @@ console.log(identity("wsa hier llos"));
 console.log(identity_function("was los")());
 console.log(add(1,2));
 console.log(mul(2,3));
-console.log(applyf(mul)(5)(6));
+
+
+// 4.2
+
+var Person = {
+    getName: function(){
+        return "Master Chief";
+    },
+};
+
+var Auto = {
+    __proto__: Person,
+};
+
+var p = Object.create(Person);
+p.name = "Hubert";
+
+console.log(p.getName());
+
+var a = Object.create(Auto);
+
+console.log(a.getName());
+
+// sonstwas
 
 function identity(param){
     return param;
