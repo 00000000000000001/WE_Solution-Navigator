@@ -1,20 +1,3 @@
-console.log("Bin da");
-
-const a = document.createElement('a');
-a.appendChild(document.createTextNode('text'));
-
-// innerHTML
-a.innerHTML = 'text';
-
-// innerText
-a.innerText = 'text';
-
-// textContent
-a.textContent = 'text';
-
-// outerHTML
-a.outerHTML = 'text';
-
 function appendRow(t1, t2, t3, t4) {
     const table = document.getElementById('table');
     var c1 = document.createElement('td');
@@ -33,5 +16,31 @@ function appendRow(t1, t2, t3, t4) {
     table.appendChild(row);
 }
 
-appendRow( "Test1", "Test2", "Test3", "test4");
-appendRow( "Test5", "Test6", "Test7", "test8");
+const a = document.createElement('a');
+a.appendChild(document.createTextNode('text'));
+
+// innerHTML
+var t0 = performance.now();
+a.innerHTML = 'text';
+var t1 = performance.now();
+const test0 = t1-t0;
+
+// innerText
+t0 = performance.now();
+a.innerText = 'text';
+t1 = performance.now();
+const test1 = t1-t0;
+
+// textContent
+t0 = performance.now();
+a.textContent = 'text';
+t1 = performance.now();
+const test2 = t1-t0;
+
+// outerHTML
+t0 = performance.now();
+a.outerHTML = 'text';
+t1 = performance.now();
+const test3 = t1-t0;
+
+appendRow( test0, test1, test2, test3);
