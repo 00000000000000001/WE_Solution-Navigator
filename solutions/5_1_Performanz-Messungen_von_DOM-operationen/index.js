@@ -34,3 +34,4 @@ function appendRow(t1, t2, t3, t4) {
 }
 
 appendRow( "Test1", "Test2", "Test3", "test4");
+appendRow( "Test5", "Test6", "Test7", "test8");
