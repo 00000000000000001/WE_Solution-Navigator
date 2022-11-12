@@ -48,11 +48,23 @@ function starten(i) {
     console.log("Start");
     stopAll();
     timers[i] = setInterval(function(){count(i)}, 1000);
+    // Aus dem Start-Knopf, mache ein Stopp-knopf
+    var button = document.getElementById(i);
+    button.textContent = "Stopp!";
+    button.onclick = function() {
+        stoppen(i);
+    }
 }
 
 function stoppen(i) {
     console.log("Stop");
     clearTimeout(timers[i]);
+    // Aus dem Stopp-Knopf, mache ein Start-knopf
+    var button = document.getElementById(i);
+    button.textContent = "Start!";
+    button.onclick = function() {
+        starten(i);
+    }
 }
 
 function stopAll() {
@@ -84,3 +96,5 @@ function show(i) {
     var str = h + ":" + m + ":" + s + " ";
     uhr.textContent = str;
 }
+
+alert("TODO: Uhr starten/stoppen bei Enter-Taste");
