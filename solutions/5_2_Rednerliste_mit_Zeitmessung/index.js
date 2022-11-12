@@ -75,6 +75,12 @@ function stoppen(i) {
     clearTimeout(timers[i]);
 }
 
+function stopAll() {
+    for (var i=0; i < timers.length; ++i) {
+        stoppen(i);
+    }
+}
+
 function count(i) {
     times[i]++;
     show(i);
