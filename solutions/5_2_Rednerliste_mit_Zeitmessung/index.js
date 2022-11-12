@@ -16,26 +16,29 @@
 //     },
 // }
 
-// function add() {
-//     var name = document.getElementById('name');
-//     var str = name.value;
-//     var ul = document.getElementById('liste');
-//     var li = document.createElement('li');
-//     li.id = "li" + count++;
-//     li.textContent = str;
-//     var button = document.createElement('button');
-//     button.textContent = "Start!";
-//     button.id = count;
-//     button.onclick = function(){
-//         for (var i = 0; i < eintraege.length; ++i) {
-//             eintraege[i].stop();
-//         }
-//         eintraege.push(Object.create(Eintrag));
-//         eintraege[0].start();
-//     };
-//     li.appendChild(button);
-//     ul.appendChild(li);
-// }
+function add() {
+
+    // Timer und Zeit speichern
+    timers.push(Number);
+    times.push(0);
+
+    var name = document.getElementById('text_name');
+    var str = name.value;
+    var ul = document.getElementById('liste');
+    var li = document.createElement('li');
+    li.id = "li" + timers.length - 1;
+    li.textContent = str;
+    var button = document.createElement('button');
+    button.textContent = "Start!";
+    button.id = timers.length - 1;
+    button.onclick = function(){
+        var i = parseInt(button.id);
+        // alert(i);
+        starten(i);
+    };
+    li.appendChild(button);
+    ul.appendChild(li);
+}
 
 // var eintraege = [];
 // var count = 0;
@@ -54,8 +57,8 @@ var id = 0;
 var timers = [];
 var times = [];
 
-timers.push(Number);
-times.push(0);
+// timers.push(Number);
+// times.push(0);
 
 // Berechnung
 // var sek = 0;
