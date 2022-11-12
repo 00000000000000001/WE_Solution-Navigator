@@ -1,21 +1,3 @@
-// var Eintrag = {
-//     timer: Object,
-//     name: "",
-//     s: 0,
-//     start: function() {
-//         this.timer = setInterval(function(){
-//             this.s += 1;
-//             console.log(function(){
-
-//             return s;
-//             }());
-//         }, 1000);
-//     },
-//     stop: function() {
-//         clearTimeout(this.timer);
-//     },
-// }
-
 function add() {
 
     // Timer und Zeit speichern
@@ -23,19 +5,16 @@ function add() {
     times.push(0);
 
     // DOM
-
     var text_name = document.getElementById('text_name');
     var str = text_name.value;
     var ul = document.getElementById('liste');
     var li = document.createElement('li');
     li.id = "li" + timers.length - 1;
-    // li.textContent = str;
     var button = document.createElement('button');
     button.textContent = "Start!";
     button.id = timers.length - 1;
     button.onclick = function(){
         var i = parseInt(button.id);
-        // alert(i);
         starten(i);
     };
 
@@ -56,31 +35,14 @@ function add() {
     li.appendChild(span_start);
 
     ul.appendChild(li);
+
+    // Uhr starten
+    button.onclick();
 }
 
-// var eintraege = [];
-// var count = 0;
-
-// function foo(id) {
-//     // var name = document.getElementById('li'+id);
-//     // var str = name.value;
-//     // str += times[id];
-
-//     console.log(Math.floor(60 / 60));
-// }
-
-
-// Test-Setup
 var id = 0;
 var timers = [];
 var times = [];
-
-// timers.push(Number);
-// times.push(0);
-
-// Berechnung
-// var sek = 0;
-// var timer = Number;
 
 function starten(i) {
     console.log("Start");
