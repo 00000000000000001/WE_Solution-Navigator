@@ -6,8 +6,10 @@ function add() {
     var ul = document.getElementById('liste');
     var li = document.createElement('li');
     li.textContent = str;
+    var button = document.createElement('button');
+    button.textContent = "Start!";
+    li.appendChild(button);
     ul.appendChild(li);
-    start();
 }
 
 function start() {
