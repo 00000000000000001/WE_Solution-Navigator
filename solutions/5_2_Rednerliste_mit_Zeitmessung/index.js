@@ -7,7 +7,7 @@ function add() {
     var button = document.createElement('button');
     button.textContent = "Start!";
     button.id = count++;
-    button.onclick = function(count){setInterval(foo, 1000);};
+    button.onclick = function(){setInterval(function(){foo(button.id)}, 1000);};
     li.appendChild(button);
     ul.appendChild(li);
 }
@@ -19,6 +19,6 @@ var count = 0;
 //     // console.log("Hallo");
 // }
 
-function foo() {
-    console.log("Hallo");
+function foo(id) {
+    console.log(id);
 }
