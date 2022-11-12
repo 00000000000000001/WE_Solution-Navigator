@@ -48,27 +48,38 @@
 //     console.log(Math.floor(60 / 60));
 // }
 
+
+// Test-Setup
+var id = 0;
+var timers = [];
+var times = [];
+
+timers.push(Number);
+times.push(0);
+
 // Berechnung
-var sek = 0;
-var timer = Object;
+// var sek = 0;
+// var timer = Number;
 
-function starten() {
+function starten(i) {
     console.log("Start");
-    timer = setInterval(count, 1000);
+    // alert(i);
+    timers[i] = setInterval(function(){count(i)}, 1000);
 }
 
-function stoppen() {
+function stoppen(i) {
     console.log("Stop");
-    clearTimeout(timer);
+    clearTimeout(timers[i]);
 }
 
-function count() {
-    ++sek;
-    show();
+function count(i) {
+    times[i]++;
+    show(i);
 }
 
-function show() {
+function show(i) {
     var uhr = document.getElementById('uhr');
+    var sek = times[i];
     var h = Math.floor(sek / 3600);
     var m = Math.floor((sek - h * 3600) / 60);
     var s = Math.floor(((sek - h * 3600) - m * 60));
