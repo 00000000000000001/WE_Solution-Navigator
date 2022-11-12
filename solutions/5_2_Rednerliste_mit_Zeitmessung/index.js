@@ -84,7 +84,7 @@ var times = [];
 
 function starten(i) {
     console.log("Start");
-    // alert(i);
+    stopAll();
     timers[i] = setInterval(function(){count(i)}, 1000);
 }
 
