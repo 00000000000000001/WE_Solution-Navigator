@@ -1,7 +1,8 @@
 function add() {
     // const list = document.getElementById('list');
-    // var name = document.getElementById('name').value;
-    console.log("name");
+    var name = document.getElementById('name');
+    var str = name.value;
+    console.log(str);
     // var li = document.createElement('li');
     // c1.textContent = t1;
 
