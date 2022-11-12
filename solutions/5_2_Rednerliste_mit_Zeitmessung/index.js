@@ -1,3 +1,6 @@
+var timers = [];
+var times = [];
+
 function add() {
 
     // Timer und Zeit speichern
@@ -39,10 +42,6 @@ function add() {
     // Uhr starten
     button.onclick();
 }
-
-var id = 0;
-var timers = [];
-var times = [];
 
 function starten(i) {
     console.log("Start");
