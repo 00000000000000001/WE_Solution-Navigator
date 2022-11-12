@@ -81,6 +81,6 @@ function show() {
     if(h < 10) {
         h = "0" + h;
     }
-    var str = h + ":" + m + ":" + s;
+    var str = h + ":" + m + ":" + s + " ";
     uhr.textContent = str;
 }
