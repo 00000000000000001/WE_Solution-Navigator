@@ -8,6 +8,7 @@ function add() {
     li.textContent = str;
     var button = document.createElement('button');
     button.textContent = "Start!";
+    button.onclick = start;
     li.appendChild(button);
     ul.appendChild(li);
 }
