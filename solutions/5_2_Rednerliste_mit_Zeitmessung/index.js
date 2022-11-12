@@ -22,12 +22,14 @@ function add() {
     timers.push(Number);
     times.push(0);
 
-    var name = document.getElementById('text_name');
-    var str = name.value;
+    // DOM
+
+    var text_name = document.getElementById('text_name');
+    var str = text_name.value;
     var ul = document.getElementById('liste');
     var li = document.createElement('li');
     li.id = "li" + timers.length - 1;
-    li.textContent = str;
+    // li.textContent = str;
     var button = document.createElement('button');
     button.textContent = "Start!";
     button.id = timers.length - 1;
@@ -36,7 +38,23 @@ function add() {
         // alert(i);
         starten(i);
     };
-    li.appendChild(button);
+
+    var span_name = document.createElement('span');
+    var span_zeit = document.createElement('span');
+    var span_start = document.createElement('span');
+
+    span_name.id = "span_name" + (timers.length - 1);
+    span_zeit.id = "span_zeit" + (timers.length - 1);
+    span_start.id = "span_start" + (timers.length - 1);
+
+    span_name.textContent = str + " ";
+    span_zeit.textContent = "00:00:00 ";
+    span_start.appendChild(button);
+
+    li.appendChild(span_name);
+    li.appendChild(span_zeit);
+    li.appendChild(span_start);
+
     ul.appendChild(li);
 }
 
@@ -87,7 +105,7 @@ function count(i) {
 }
 
 function show(i) {
-    var uhr = document.getElementById('uhr');
+    var uhr = document.getElementById('span_zeit' + i);
     var sek = times[i];
     var h = Math.floor(sek / 3600);
     var m = Math.floor((sek - h * 3600) / 60);
