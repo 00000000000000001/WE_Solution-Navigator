@@ -20,10 +20,6 @@ function eval() {
         li.textContent = liste[i];
         ol_liste.appendChild(li);
     }
-
-
-
-    console.log(liste);
 }
 
 var Aufgaben = {
