@@ -17,21 +17,24 @@ var aufgaben = {
     },
     topsort : function() {
                 var res = [];
-                var tasks = tasks();
+                var tasks = this.tasks();
                 var i = 0;
-                while ( tasks.length() > 0 )
+                while ( tasks.length > 0 )
                 {
-                    var dep = dep(tasks[i]);
+                    var dep = this.dep(tasks[i]);
                     if (dep.every(val => res.includes(val))) {
                         res.push(tasks[i]);
-                        tasks = tasks.splice(i, 1);
+                        tasks.splice(i,1);
                         i = 0;
                     }
                     else
                     {
                         ++i;
                     }
+                    // tasks.splice(0,1);
                 }
+
+                // console.log(res);
                 return res;
             },
     dep : function(task) {
@@ -74,5 +77,6 @@ console.assert(!aufgaben.dep("studieren").includes("prüfen"));
 console.assert(!aufgaben.dep("studieren").includes("studieren"));
 
 // topsort gibt eine Liste in richtiger Reihenfolge der Elemente wieder
-console.log(aufgaben.topsort === ["schlafen", "essen", "studieren", "prüfen"]);
-console.log(aufgaben.topsort);
+// console.assert(aufgaben.topsort() === ["schlafen", "essen", "studieren", "prüfen"]);
+console.log(aufgaben.topsort());
+// aufgaben.topsort()
