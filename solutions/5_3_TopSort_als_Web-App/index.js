@@ -1,5 +1,6 @@
 function eval() {
     var eingabe = document.getElementById("eingabe");
     var str = eingabe.textContent;
-    console.log(str);
+    const arr = str.split(" ");
+    console.log(arr.length);
 }

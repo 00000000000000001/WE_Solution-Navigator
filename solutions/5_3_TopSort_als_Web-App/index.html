@@ -1,16 +1,18 @@
 <!DOCTYPE html>
     <head>
         <style>
-            p {
+            #eingabe {
                 border: solid thin black;
                 border-radius: 1em;
                 padding: 1em;
+                width: 100%;
             }
         </style>
         <script defer src="./index.js"></script>
     </head>
     <body>
         <h1>TopSort</h1>
+        <p><xmp>Syntax: <dependency>,<successor>;</xmp></p>
         <p contenteditable="true" id="eingabe"></p>
         <button onclick="eval()">Eval!</button>
         <h2>Sortierte Liste</h2>
