@@ -10,7 +10,20 @@ function eval() {
         // regeln.push(arr[i].split(","));
         Aufgaben.add(arr[i].split(","));
     }
-    console.log(Aufgaben.topsort());
+
+    // Liste anzeigen
+    var liste = Aufgaben.topsort();
+
+    var ol_liste = document.getElementById("ol_liste");
+    for (var i=0; i < liste.length; ++i) {
+        var li = document.createElement('li');
+        li.textContent = liste[i];
+        ol_liste.appendChild(li);
+    }
+
+
+
+    console.log(liste);
 }
 
 var Aufgaben = {
