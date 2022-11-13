@@ -31,24 +31,24 @@ var Aufgaben = {
         return res;
     },
     topsort : function() {
-                var res = [];
-                var tasks = this.tasks();
-                var i = 0;
-                while ( this.tasks.length > 0 )
-                {
-                    var dep = dep(tasks[i]);
-                    if (dep.every(val => res.includes(val))) {
-                        res.push(this.tasks[i]);
-                        tasks = this.tasks.splice(i, 1);
-                        i = 0;
-                    }
-                    else
-                    {
-                        ++i;
-                    }
-                }
-                return res;
-            },
+        var res = [];
+        var tasks = this.tasks();
+        var i = 0;
+        while ( tasks.length > 0 )
+        {
+            var dep = this.dep(tasks[i]);
+            if (dep.every(val => res.includes(val))) {
+                res.push(tasks[i]);
+                tasks.splice(i,1);
+                i = 0;
+            }
+            else
+            {
+                ++i;
+            }
+        }
+        return res;
+    },
     dep : function(task) {
         var res = [];
         for (var i = 0; i < this.regeln.length; ++i){

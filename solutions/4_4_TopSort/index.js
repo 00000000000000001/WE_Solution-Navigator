@@ -31,10 +31,7 @@ var aufgaben = {
                     {
                         ++i;
                     }
-                    // tasks.splice(0,1);
                 }
-
-                // console.log(res);
                 return res;
             },
     dep : function(task) {
