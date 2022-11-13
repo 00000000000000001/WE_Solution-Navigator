@@ -1,1 +1,3 @@
-console.log("Hallo Welt!");
+function eval() {
+    console.log("Hallo Welt!");
+}
