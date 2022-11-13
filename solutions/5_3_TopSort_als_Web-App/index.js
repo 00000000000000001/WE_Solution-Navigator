@@ -15,6 +15,7 @@ function eval() {
     var liste = Aufgaben.topsort();
 
     var ol_liste = document.getElementById("ol_liste");
+    ol_liste.innerHTML = "";
     for (var i=0; i < liste.length; ++i) {
         var li = document.createElement('li');
         li.textContent = liste[i];
