@@ -1,16 +1,17 @@
 // Kellerautomat
 
 var A = {
-    // Q : ["q0", "q1"],
-    // Sigma : ['(', ')', '[', ']', '{', '}'],
-    // Gamma : ['A', 'B', 'C', '#'],
+    // Q : ["q0", "q1"/*, "q2" */], // Zustände
+    Sigma : ['(', ')', '[', ']', '{', '}'], // Alphabet
+    // Gamma : ['A', 'B', 'C', '#'], // Kelleralphabet
     // delta nimmt einen Zustand q und einen Buchstaben s entgegen
     delta : function(s) {
-        // TODO: Übergangsfunktion implementieren
-        /* 
-            Wenn in q0 ein '(' gelesen wird und aus dem Stack ein '#' gelesen wird,
-            dann: push('#') und push('A').
-        */  
+
+        // Guard: Funktion verlassen, wenn Buchstabe s nicht im Alphabet Sigma enthalten ist
+       if (!this.Sigma.includes(s)) {
+            return;
+       }
+
        let top = this.stack.pop();
 
         if ( (this.q === "q0") && (s === '(') && (top === '#')) {
@@ -37,10 +38,6 @@ var A = {
             this.stack.push('A');
             this.q = "q0";
         }
-        
-        // console.log("s: " + s);
-        // console.log("q: " + this.q);
-        // console.log(this.stack);
     },
     // q0 : "q0",
     // Z : '#',
@@ -56,9 +53,11 @@ var A = {
         while (this.w.length > 0) {
             this.delta(this.w.shift());
         }
+        // der Kellerautomat akzeptiert, wenn der Stack nach Abarbeitung des Wortes w leer ist
         if (this.stack.length === 1 && this.stack[0] === '#') {
             return true;
         } else {
+            this.stack = ['#']; // Stack wieder zurücksetzen
             return false;
         }
     }
@@ -72,7 +71,6 @@ function eval() {
     // 2. Ausdruck als Wort w an Automaten A weitergeben
     const a = Object.create(A);
     const valid = A.eval(w);
-    // const valid = foo(w);
 
     // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
     if(valid) {
