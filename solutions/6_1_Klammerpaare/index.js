@@ -13,7 +13,7 @@ var A = {
        }
 
        let top = this.stack.pop();
-       
+
        // für '(' und ')'
         if ( (this.q === "q0") && (s === '(') && (top === '#')) {
             this.stack.push('#');
@@ -185,10 +185,12 @@ function eval() {
 
     // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
     if(valid) {
-        // färbe gründ
-        eingabe.style = "background-color: rgb(152, 251, 152)";
+        // färbe grün
+        eingabe.style = "background-color: ";
     } else {
         // färbe rot
         eingabe.style = "background-color: rgb(240, 128, 128)";
     }
 }
+
+alert("TODO: Tests schreiben (assertions)");
