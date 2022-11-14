@@ -22,7 +22,7 @@ var A = {
     }
 }
 
-const stack = [];
+const stack = ['#'];
 
 function eval() {
     // 1. Ausdruck auslesen
