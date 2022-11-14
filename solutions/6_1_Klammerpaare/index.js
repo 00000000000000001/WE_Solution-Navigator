@@ -18,6 +18,9 @@ var A = {
     eval : function (w) {
         this.w = [...w]; // String in Character-Array umwandeln mittel Spread-Operator
         console.log(this.w);
+        while (this.w.length > 0) {
+            console.log(this.w.shift());
+        }
         // for (const buchstabe of w) {
         //     console.log(buchstabe);
         // }
