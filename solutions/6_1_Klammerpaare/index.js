@@ -20,8 +20,11 @@ var A = {
 const stack = [];
 
 function eval() {
-    console.log("Hallo Welt!"); // Test-Ausgabe
+    // console.log("Hallo Welt!"); // Test-Ausgabe
     // 1. Ausdruck auslesen
+    let eingabe = document.getElementById("eingabe");
+    let str = eingabe.textContent; // Wort w
+    console.log(str);
     // 2. Ausdruck als Wort w an Automaten A weitergeben
     // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
 }
