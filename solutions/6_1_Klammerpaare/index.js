@@ -28,5 +28,11 @@ function eval() {
     const a = Object.create(A);
     var res = A.eval(w)
     // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
-    console.log(res);
+    if(res) {
+        // färbe gründ
+        eingabe.style = "background-color: rgb(144, 238, 9)";
+    } else {
+        // färbe rot
+        eingabe.style = "background-color: rgb(240, 128, 128)";
+    }
 }
