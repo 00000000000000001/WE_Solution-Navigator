@@ -13,13 +13,17 @@ var A = {
        }
 
        let top = this.stack.pop();
-
+       // für '(' und ')'
         if ( (this.q === "q0") && (s === '(') && (top === '#')) {
             this.stack.push('#');
             this.stack.push('A');
         }
         if ( (this.q === "q0") && (s === '(') && (top === 'A')) {
             this.stack.push('A');
+            this.stack.push('A');
+        }
+        if ( (this.q === "q0") && (s === '(') && (top === 'B')) {
+            this.stack.push('B');
             this.stack.push('A');
         }
         if ( (this.q === "q0") && (s === ')') && (top === 'A')) {
@@ -38,6 +42,40 @@ var A = {
             this.stack.push('A');
             this.q = "q0";
         }
+
+        // für '[' und ']'
+        if ( (this.q === "q0") && (s === '[') && (top === '#')) {
+            this.stack.push('#');
+            this.stack.push('B');
+        }
+        if ( (this.q === "q0") && (s === '[') && (top === 'B')) {
+            this.stack.push('B');
+            this.stack.push('B');
+        }
+        if ( (this.q === "q0") && (s === '[') && (top === 'A')) {
+            this.stack.push('A');
+            this.stack.push('B');
+        }
+        if ( (this.q === "q0") && (s === ']') && (top === 'B')) {
+            this.q = "q1";
+        }
+        if ( (this.q === "q1") && (s === ']') && (top === 'B')) {
+            this.q = "q1";
+        }
+        if ( (this.q === "q1") && (s === '[') && (top === '#')) {
+            this.stack.push('#');
+            this.stack.push('B');
+            this.q = "q0";
+        }
+        if ( (this.q === "q1") && (s === '[') && (top === 'B')) {
+            this.stack.push('B');
+            this.stack.push('B');
+            this.q = "q0";
+        }
+
+        console.log("s: " + s);
+        console.log("q: " + this.q);
+        console.log(this.stack);
     },
     // q0 : "q0",
     // Z : '#',
