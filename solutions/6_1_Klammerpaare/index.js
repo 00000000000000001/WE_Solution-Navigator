@@ -6,18 +6,21 @@ var A = {
     Gamma : ['A', 'B', 'C', '#'],
     delta : function() {
         // TODO: Übergangsfunktion implementieren
-        // TODO: delta als Generator implementieren um Zustände zu merken
+
     },
     q0 : "q0",
     Z : '#',
     F : "q2",
     // Gedächtnis
+    w : [],
     q : "",
     // Eval nimmt ein Wort "w" entgegen
     eval : function (w) {
-        for (const buchstabe of w) {
-            console.log(buchstabe);
-        }
+        this.w = [...w]; // String in Character-Array umwandeln mittel Spread-Operator
+        console.log(this.w);
+        // for (const buchstabe of w) {
+        //     console.log(buchstabe);
+        // }
         return false;
     }
 }
