@@ -1,9 +1,9 @@
 // Kellerautomat
 
 var A = {
-    Q : ["q0", "q1", "q2"],
-    Sigma : ['(', ')', '[', ']', '{', '}'],
-    Gamma : ['A', 'B', 'C', '#'],
+    // Q : ["q0", "q1"],
+    // Sigma : ['(', ')', '[', ']', '{', '}'],
+    // Gamma : ['A', 'B', 'C', '#'],
     // delta nimmt einen Zustand q und einen Buchstaben s entgegen
     delta : function(s) {
         // TODO: Übergangsfunktion implementieren
@@ -42,9 +42,9 @@ var A = {
         // console.log("q: " + this.q);
         // console.log(this.stack);
     },
-    q0 : "q0",
-    Z : '#',
-    F : "q2",
+    // q0 : "q0",
+    // Z : '#',
+    // F : "q2",
     // Gedächtnis
     stack : ['#'],
     w : [],
