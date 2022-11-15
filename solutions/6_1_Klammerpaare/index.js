@@ -180,8 +180,7 @@ function eval() {
     const w = eingabe.textContent; // Wort w
 
     // 2. Ausdruck als Wort w an Automaten A weitergeben
-    const a = Object.create(A);
-    const valid = A.akzeptor(w);
+    const valid = a.akzeptor(w);
 
     // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
     if(valid) {
@@ -208,9 +207,16 @@ function setAlphabet() {
     const c1 = input4.value;
     const c2 = input5.value;
 
-    console.log(a1 + a2 + b1 + b2 + c1 + c2);
+    const alphabet = [a1, a2, b1, b2, c1, c2];
+
+    console.log(alphabet);
+
+    a.Sigma = alphabet;
+    eval();
 }
 
-setAlphabet()
+const a = Object.create(A);
+
+// setAlphabet()
 
 // alert("TODO: Tests schreiben (assertions)");
