@@ -1,9 +1,7 @@
 // Kellerautomat
 
 var A = {
-    // Q : ["q0", "q1", "qtot"], // Zustände
     Sigma : ['(', ')', '[', ']', '{', '}'], // Alphabet
-    // Gamma : ['A', 'B', 'C', '#'], // Kelleralphabet
     // delta nimmt einen Buchstaben s entgegen
     delta : function(s) {
 
@@ -83,7 +81,7 @@ var A = {
         if ((this.q === "q0") && (s === this.Sigma[5]) && (top === 'C')) {
             return;
         }
-        // q_tot
+        // qtot
         if ((this.q === "q0") && (s === this.Sigma[1]) && (top === '#')) {
             return;
         }
@@ -96,15 +94,12 @@ var A = {
 
         this.stack.push(top); // Symbol wieder zurücklegen, wenn keine Übergangsfunktion existiert
     },
-    // q0 : "q0",
-    // Z : '#',
-    // F : "q1",
     // Gedächtnis
     stack : ['#'],
     w : [],
     q : "q0",
     // Eval nimmt ein Wort "w" entgegen
-    akzeptor : function (w) {
+    Akzeptor : function (w) {
         this.w = [...w]; // String in Character-Array umwandeln mittel Spread-Operator
         // console.log(this.w);
         while (this.w.length > 0) {
@@ -132,11 +127,11 @@ function eval() {
     const w = eingabe.textContent; // Wort w
 
     // 2. Ausdruck als Wort w an Automaten A weitergeben
-    const valid = a.akzeptor(w);
+    const valid = a.Akzeptor(w);
 
     // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
     if(valid) {
-        // färbe grün
+        // färbe neutral
         eingabe.style = "background-color: ";
     } else {
         // färbe rot
@@ -166,79 +161,78 @@ function setAlphabet() {
 
 const a = Object.create(A);
 
-console.assert(a.akzeptor("()") === true);
-console.assert(a.akzeptor("[]") === true);
-console.assert(a.akzeptor("{}") === true);
+console.assert(a.Akzeptor("()") === true);
+console.assert(a.Akzeptor("[]") === true);
+console.assert(a.Akzeptor("{}") === true);
 
-console.assert(a.akzeptor("(())") === true);
-console.assert(a.akzeptor("[[]]") === true);
-console.assert(a.akzeptor("{{}}") === true);
+console.assert(a.Akzeptor("(())") === true);
+console.assert(a.Akzeptor("[[]]") === true);
+console.assert(a.Akzeptor("{{}}") === true);
 
-console.assert(a.akzeptor("([])") === true);
-console.assert(a.akzeptor("[{}]") === true);
-console.assert(a.akzeptor("{()}") === true);
+console.assert(a.Akzeptor("([])") === true);
+console.assert(a.Akzeptor("[{}]") === true);
+console.assert(a.Akzeptor("{()}") === true);
 
-console.assert(a.akzeptor("({})") === true);
-console.assert(a.akzeptor("[()]") === true);
-console.assert(a.akzeptor("{[]}") === true);
+console.assert(a.Akzeptor("({})") === true);
+console.assert(a.Akzeptor("[()]") === true);
+console.assert(a.Akzeptor("{[]}") === true);
 
-console.assert(a.akzeptor("()()") === true);
-console.assert(a.akzeptor("[][]") === true);
-console.assert(a.akzeptor("{}{}") === true);
+console.assert(a.Akzeptor("()()") === true);
+console.assert(a.Akzeptor("[][]") === true);
+console.assert(a.Akzeptor("{}{}") === true);
 
-console.assert(a.akzeptor("()[]") === true);
-console.assert(a.akzeptor("[]{}") === true);
-console.assert(a.akzeptor("{}()") === true);
+console.assert(a.Akzeptor("()[]") === true);
+console.assert(a.Akzeptor("[]{}") === true);
+console.assert(a.Akzeptor("{}()") === true);
 
-console.assert(a.akzeptor("(){}") === true);
-console.assert(a.akzeptor("[]()") === true);
-console.assert(a.akzeptor("{}[]") === true);
+console.assert(a.Akzeptor("(){}") === true);
+console.assert(a.Akzeptor("[]()") === true);
+console.assert(a.Akzeptor("{}[]") === true);
 
-console.assert(a.akzeptor("[()()]") === true);
-console.assert(a.akzeptor("{[][]}") === true);
-console.assert(a.akzeptor("({}{})") === true);
+console.assert(a.Akzeptor("[()()]") === true);
+console.assert(a.Akzeptor("{[][]}") === true);
+console.assert(a.Akzeptor("({}{})") === true);
 
-console.assert(a.akzeptor("{()[]}") === true);
-console.assert(a.akzeptor("([]{})") === true);
-console.assert(a.akzeptor("[{}()]") === true);
+console.assert(a.Akzeptor("{()[]}") === true);
+console.assert(a.Akzeptor("([]{})") === true);
+console.assert(a.Akzeptor("[{}()]") === true);
 
-console.assert(a.akzeptor("(") === false);
-console.assert(a.akzeptor("[") === false);
-console.assert(a.akzeptor("{") === false);
+console.assert(a.Akzeptor("(") === false);
+console.assert(a.Akzeptor("[") === false);
+console.assert(a.Akzeptor("{") === false);
 
-console.assert(a.akzeptor(")") === false);
-console.assert(a.akzeptor("]") === false);
-console.assert(a.akzeptor("}") === false);
+console.assert(a.Akzeptor(")") === false);
+console.assert(a.Akzeptor("]") === false);
+console.assert(a.Akzeptor("}") === false);
 
-console.assert(a.akzeptor("()(") === false);
-console.assert(a.akzeptor("[][") === false);
-console.assert(a.akzeptor("{}{") === false);
+console.assert(a.Akzeptor("()(") === false);
+console.assert(a.Akzeptor("[][") === false);
+console.assert(a.Akzeptor("{}{") === false);
 
-console.assert(a.akzeptor("())") === false);
-console.assert(a.akzeptor("[]]") === false);
-console.assert(a.akzeptor("{}}") === false);
+console.assert(a.Akzeptor("())") === false);
+console.assert(a.Akzeptor("[]]") === false);
+console.assert(a.Akzeptor("{}}") === false);
 
-console.assert(a.akzeptor("(()") === false);
-console.assert(a.akzeptor("[[]") === false);
-console.assert(a.akzeptor("{{}") === false);
+console.assert(a.Akzeptor("(()") === false);
+console.assert(a.Akzeptor("[[]") === false);
+console.assert(a.Akzeptor("{{}") === false);
 
-console.assert(a.akzeptor(")()") === false);
-console.assert(a.akzeptor("][]") === false);
-console.assert(a.akzeptor("}{}") === false);
+console.assert(a.Akzeptor(")()") === false);
+console.assert(a.Akzeptor("][]") === false);
+console.assert(a.Akzeptor("}{}") === false);
 
-console.assert(a.akzeptor("(]") === false);
-console.assert(a.akzeptor("[}") === false);
-console.assert(a.akzeptor("{)") === false);
+console.assert(a.Akzeptor("(]") === false);
+console.assert(a.Akzeptor("[}") === false);
+console.assert(a.Akzeptor("{)") === false);
 
-console.assert(a.akzeptor("(}") === false);
-console.assert(a.akzeptor("[)") === false);
-console.assert(a.akzeptor("{]") === false);
+console.assert(a.Akzeptor("(}") === false);
+console.assert(a.Akzeptor("[)") === false);
+console.assert(a.Akzeptor("{]") === false);
 
-console.assert(a.akzeptor("[(][)]") === false);
-console.assert(a.akzeptor("{(}{)}") === false);
+console.assert(a.Akzeptor("[(][)]") === false);
+console.assert(a.Akzeptor("{(}{)}") === false);
+console.assert(a.Akzeptor("([)(])") === false);
 
-console.assert(a.akzeptor("([)(])") === false);
-console.assert(a.akzeptor("{[}{]}") === false);
-
-console.assert(a.akzeptor("({)(})") === false);
-console.assert(a.akzeptor("[{][}]") === false);
+console.assert(a.Akzeptor("{[}{]}") === false);
+console.assert(a.Akzeptor("({)(})") === false);
+console.assert(a.Akzeptor("[{][}]") === false);
