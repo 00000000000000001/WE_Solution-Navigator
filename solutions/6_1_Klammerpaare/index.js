@@ -193,4 +193,24 @@ function eval() {
     }
 }
 
-alert("TODO: Tests schreiben (assertions)");
+function setAlphabet() {
+    const input0 = document.getElementById("input0");
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const input3 = document.getElementById("input3");
+    const input4 = document.getElementById("input4");
+    const input5 = document.getElementById("input5");
+
+    const a1 = input0.value;
+    const a2 = input1.value;
+    const b1 = input2.value;
+    const b2 = input3.value;
+    const c1 = input4.value;
+    const c2 = input5.value;
+
+    console.log(a1 + a2 + b1 + b2 + c1 + c2);
+}
+
+setAlphabet()
+
+// alert("TODO: Tests schreiben (assertions)");
