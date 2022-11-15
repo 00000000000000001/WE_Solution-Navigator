@@ -2,7 +2,7 @@
 
 var A = {
     Sigma : ['(', ')', '[', ']', '{', '}'], // Alphabet
-    // delta nimmt einen Buchstaben s entgegen
+    // delta nimmt einen Buchstaben s entgegen und führt Zustandsübergänge durch
     delta : function(s) {
 
         // Guard: Funktion verlassen, wenn Buchstabe s nicht im Alphabet Sigma enthalten ist
@@ -92,20 +92,19 @@ var A = {
             return;
         }
 
-        this.stack.push(top); // Symbol wieder zurücklegen, wenn keine Übergangsfunktion existiert
+        this.stack.push(top); // Symbol wieder zurücklegen, wenn keine geeignete Übergangsfunktion existiert
     },
     // Gedächtnis
     stack : ['#'],
     w : [],
     q : "q0",
-    // Eval nimmt ein Wort "w" entgegen
+    // Akzeptor nimmt ein Wort "w" entgegen und prüft es auf Gültigkeit
     Akzeptor : function (w) {
-        this.w = [...w]; // String in Character-Array umwandeln mittel Spread-Operator
-        // console.log(this.w);
+        this.w = [...w]; // String in Character-Array umwandeln mittels Spread-Operator
         while (this.w.length > 0) {
             this.delta(this.w.shift());
         }
-        // der Kellerautomat akzeptiert, wenn der Stack nach Abarbeitung des Wortes w leer ist
+        // der Kellerautomat akzeptiert, wenn der Stack nach Abarbeitung des Wortes w einzig das Kellersymbol beinhaltet
         if (this.stack.length === 1 && this.stack[0] === '#') {
             return true;
         } else {
