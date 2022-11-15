@@ -4,7 +4,7 @@ var A = {
     // Q : ["q0", "q1"/*, "q2" */], // Zustände
     Sigma : ['(', ')', '[', ']', '{', '}'], // Alphabet
     // Gamma : ['A', 'B', 'C', '#'], // Kelleralphabet
-    // delta nimmt einen Zustand q und einen Buchstaben s entgegen
+    // delta nimmt einen Buchstaben s entgegen
     delta : function(s) {
 
         // Guard: Funktion verlassen, wenn Buchstabe s nicht im Alphabet Sigma enthalten ist
@@ -18,137 +18,165 @@ var A = {
         if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('A');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('A');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('A');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('A');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[1]) && (top === 'A')) {
             this.q = "q1";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[1]) && (top === 'A')) {
             this.q = "q1";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('A');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('A');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('A');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('A');
             this.q = "q0";
+            return;
         }
 
         // für '[' und ']'
         if ( (this.q === "q0") && (s === this.Sigma[2]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('B');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[2]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('B');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[2]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('B');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[2]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('B');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[3]) && (top === 'B')) {
             this.q = "q1";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[3]) && (top === 'B')) {
             this.q = "q1";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[2]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('B');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[2]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('B');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[2]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('B');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[2]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('B');
             this.q = "q0";
+            return;
         }
 
         // für '{' und '}'
         if ( (this.q === "q0") && (s === this.Sigma[4]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('C');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[4]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('C');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[4]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('C');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[4]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('C');
+            return;
         }
         if ( (this.q === "q0") && (s === this.Sigma[5]) && (top === 'C')) {
             this.q = "q1";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[5]) && (top === 'C')) {
             this.q = "q1";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[4]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('C');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[4]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('C');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[4]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('C');
             this.q = "q0";
+            return;
         }
         if ( (this.q === "q1") && (s === this.Sigma[4]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('C');
             this.q = "q0";
+            return;
         }
 
-        // console.log("s: " + s);
-        // console.log("q: " + this.q);
-        // console.log(this.stack);
+        this.stack.push(top); // Symbol wieder zurücklegen, wenn keine Übergangsfunktion existiert
     },
     // q0 : "q0",
     // Z : '#',
@@ -208,15 +236,59 @@ function setAlphabet() {
     const c2 = input5.value;
 
     const alphabet = [a1, a2, b1, b2, c1, c2];
-
-    console.log(alphabet);
-
     a.Sigma = alphabet;
     eval();
 }
 
 const a = Object.create(A);
 
-// setAlphabet()
+// alert("TODO: \n- Tests schreiben (assertions)\n- {(}{)} ist gültig");
 
-// alert("TODO: Tests schreiben (assertions)");
+console.assert(a.akzeptor("()") === true);
+console.assert(a.akzeptor("[]") === true);
+console.assert(a.akzeptor("{}") === true);
+
+console.assert(a.akzeptor("(())") === true);
+console.assert(a.akzeptor("[[]]") === true);
+console.assert(a.akzeptor("{{}}") === true);
+
+console.assert(a.akzeptor("([])") === true);
+console.assert(a.akzeptor("[{}]") === true);
+console.assert(a.akzeptor("{()}") === true);
+
+console.assert(a.akzeptor("({})") === true);
+console.assert(a.akzeptor("[()]") === true);
+console.assert(a.akzeptor("{[]}") === true);
+
+console.assert(a.akzeptor("()()") === true);
+console.assert(a.akzeptor("[][]") === true);
+console.assert(a.akzeptor("{}{}") === true);
+
+console.assert(a.akzeptor("()[]") === true);
+console.assert(a.akzeptor("[]{}") === true);
+console.assert(a.akzeptor("{}()") === true);
+
+console.assert(a.akzeptor("(){}") === true);
+console.assert(a.akzeptor("[]()") === true);
+console.assert(a.akzeptor("{}[]") === true);
+
+console.assert(a.akzeptor("(") === false);
+console.assert(a.akzeptor("[") === false);
+console.assert(a.akzeptor("{") === false);
+
+console.assert(a.akzeptor("(]") === false);
+console.assert(a.akzeptor("[}") === false);
+console.assert(a.akzeptor("{)") === false);
+
+console.assert(a.akzeptor("(}") === false);
+console.assert(a.akzeptor("[)") === false);
+console.assert(a.akzeptor("{]") === false);
+
+console.assert(a.akzeptor("[(][)]") === false);
+console.assert(a.akzeptor("{(}{)}") === false);
+
+console.assert(a.akzeptor("([)(])") === false);
+console.assert(a.akzeptor("{[}{]}") === false);
+
+console.assert(a.akzeptor("({)(})") === false);
+console.assert(a.akzeptor("[{][}]") === false);
