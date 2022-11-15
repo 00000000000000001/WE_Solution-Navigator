@@ -1,7 +1,7 @@
 // Kellerautomat
 
 var A = {
-    // Q : ["q0", "q1"/*, "q2", "qtot" */], // Zustände
+    // Q : ["q0", "q1", "qtot"], // Zustände
     Sigma : ['(', ')', '[', ']', '{', '}'], // Alphabet
     // Gamma : ['A', 'B', 'C', '#'], // Kelleralphabet
     // delta nimmt einen Buchstaben s entgegen
@@ -75,105 +75,12 @@ var A = {
             return;
         }
         if ((this.q === "q0") && (s === this.Sigma[1]) && (top === 'A')) {
-            this.qn = "q1";
             return;
         }
         if ((this.q === "q0") && (s === this.Sigma[3]) && (top === 'B')) {
-            this.qn = "q1";
             return;
         }
         if ((this.q === "q0") && (s === this.Sigma[5]) && (top === 'C')) {
-            this.qn = "q1";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[1]) && (top === 'A')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[1]) && (top === 'B')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[1]) && (top === 'C')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[3]) && (top === 'A')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[3]) && (top === 'B')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[3]) && (top === 'C')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[0]) && (top === '#')) {
-            this.stack.push('#');
-            this.stack.push('A');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[2]) && (top === '#')) {
-            this.stack.push('#');
-            this.stack.push('B');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[4]) && (top === '#')) {
-            this.stack.push('#');
-            this.stack.push('C');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[0]) && (top === 'A')) {
-            this.stack.push('A');
-            this.stack.push('A');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[0]) && (top === 'B')) {
-            this.stack.push('B');
-            this.stack.push('A');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[0]) && (top === 'C')) {
-            this.stack.push('C');
-            this.stack.push('A');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[2]) && (top === 'A')) {
-            this.stack.push('A');
-            this.stack.push('B');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[2]) && (top === 'B')) {
-            this.stack.push('B');
-            this.stack.push('B');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[2]) && (top === 'C')) {
-            this.stack.push('C');
-            this.stack.push('B');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[4]) && (top === 'A')) {
-            this.stack.push('A');
-            this.stack.push('C');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[4]) && (top === 'B')) {
-            this.stack.push('B');
-            this.stack.push('C');
-            this.q = "q0";
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[4]) && (top === 'C')) {
-            this.stack.push('C');
-            this.stack.push('C');
-            this.q = "q0";
             return;
         }
         // q_tot
@@ -186,22 +93,12 @@ var A = {
         if ((this.q === "q0") && (s === this.Sigma[5]) && (top === '#')) {
             return;
         }
-        // TODO: prüfen, ob diese Überführungen notwendig sind
-        if ((this.q === "q1") && (s === this.Sigma[1]) && (top === '#')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[3]) && (top === '#')) {
-            return;
-        }
-        if ((this.q === "q1") && (s === this.Sigma[5]) && (top === '#')) {
-            return;
-        }
 
         this.stack.push(top); // Symbol wieder zurücklegen, wenn keine Übergangsfunktion existiert
     },
     // q0 : "q0",
     // Z : '#',
-    // F : "q2",
+    // F : "q1",
     // Gedächtnis
     stack : ['#'],
     w : [],
@@ -220,6 +117,12 @@ var A = {
             this.stack = ['#']; // Stack wieder zurücksetzen
             return false;
         }
+    },
+    toString: function() {
+        const q = "q: " + this.q;
+        const w = "w: " + this.w;
+        const stack = "stack: " + this.stack;
+        return q + '\n' + w + '\n' + stack;
     }
 }
 
@@ -314,6 +217,14 @@ console.assert(a.akzeptor("{}{") === false);
 console.assert(a.akzeptor("())") === false);
 console.assert(a.akzeptor("[]]") === false);
 console.assert(a.akzeptor("{}}") === false);
+
+console.assert(a.akzeptor("(()") === false);
+console.assert(a.akzeptor("[[]") === false);
+console.assert(a.akzeptor("{{}") === false);
+
+console.assert(a.akzeptor(")()") === false);
+console.assert(a.akzeptor("][]") === false);
+console.assert(a.akzeptor("}{}") === false);
 
 console.assert(a.akzeptor("(]") === false);
 console.assert(a.akzeptor("[}") === false);
