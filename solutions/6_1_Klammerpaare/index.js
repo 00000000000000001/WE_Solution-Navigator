@@ -15,44 +15,44 @@ var A = {
        let top = this.stack.pop();
 
        // für '(' und ')'
-        if ( (this.q === "q0") && (s === '(') && (top === '#')) {
+        if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('A');
         }
-        if ( (this.q === "q0") && (s === '(') && (top === 'A')) {
+        if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('A');
         }
-        if ( (this.q === "q0") && (s === '(') && (top === 'B')) {
+        if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('A');
         }
-        if ( (this.q === "q0") && (s === '(') && (top === 'C')) {
+        if ( (this.q === "q0") && (s === this.Sigma[0]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('A');
         }
-        if ( (this.q === "q0") && (s === ')') && (top === 'A')) {
+        if ( (this.q === "q0") && (s === this.Sigma[1]) && (top === 'A')) {
             this.q = "q1";
         }
-        if ( (this.q === "q1") && (s === ')') && (top === 'A')) {
+        if ( (this.q === "q1") && (s === this.Sigma[1]) && (top === 'A')) {
             this.q = "q1";
         }
-        if ( (this.q === "q1") && (s === '(') && (top === '#')) {
+        if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === '#')) {
             this.stack.push('#');
             this.stack.push('A');
             this.q = "q0";
         }
-        if ( (this.q === "q1") && (s === '(') && (top === 'A')) {
+        if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === 'A')) {
             this.stack.push('A');
             this.stack.push('A');
             this.q = "q0";
         }
-        if ( (this.q === "q1") && (s === '(') && (top === 'B')) {
+        if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === 'B')) {
             this.stack.push('B');
             this.stack.push('A');
             this.q = "q0";
         }
-        if ( (this.q === "q1") && (s === '(') && (top === 'C')) {
+        if ( (this.q === "q1") && (s === this.Sigma[0]) && (top === 'C')) {
             this.stack.push('C');
             this.stack.push('A');
             this.q = "q0";
