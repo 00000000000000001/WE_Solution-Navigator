@@ -1,7 +1,7 @@
 // Kellerautomat
 
 var A = {
-    Sigma : ['(', ')', '[', ']', '{', '}'], // Alphabet
+    Alphabet : ['(', ')', '[', ']', '{', '}'], // Alphabet
     // Akzeptor nimmt ein Wort "w" entgegen und prüft es auf Gültigkeit
     Akzeptor : function (w) {
 
@@ -13,55 +13,51 @@ var A = {
         let zustand = 0;
 
         for (const c of w) {
-            // Guard lässt nur Zeichen durch, die im Alphabet enthalten sind
-            if (!this.Sigma.includes(c) && c !== '€' ) {
-                continue;
-            }
             const top = stack.top();
             if (zustand === 0) {
-                if (c === this.Sigma[0] && top === '#') {
+                if (c === this.Alphabet[0] && top === '#') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[0] && top === 'A') {
+                } else if (c === this.Alphabet[0] && top === 'A') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[0] && top === 'B') {
+                } else if (c === this.Alphabet[0] && top === 'B') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[0] && top === 'C') {
+                } else if (c === this.Alphabet[0] && top === 'C') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[2] && top === '#') {
+                } else if (c === this.Alphabet[2] && top === '#') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[2] && top === 'A') {
+                } else if (c === this.Alphabet[2] && top === 'A') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[2] && top === 'B') {
+                } else if (c === this.Alphabet[2] && top === 'B') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[2] && top === 'C') {
+                } else if (c === this.Alphabet[2] && top === 'C') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[4] && top === '#') {
+                } else if (c === this.Alphabet[4] && top === '#') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === this.Sigma[4] && top === 'A') {
+                } else if (c === this.Alphabet[4] && top === 'A') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === this.Sigma[4] && top === 'B') {
+                } else if (c === this.Alphabet[4] && top === 'B') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === this.Sigma[4] && top === 'C') {
+                } else if (c === this.Alphabet[4] && top === 'C') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === this.Sigma[1] && top === 'A') {
+                } else if (c === this.Alphabet[1] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[3] && top === 'B') {
+                } else if (c === this.Alphabet[3] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[5] && top === 'C') {
+                } else if (c === this.Alphabet[5] && top === 'C') {
                     zustand = 1;
                     stack.pop();
                 } else {
@@ -69,67 +65,67 @@ var A = {
                 }
                 continue;
             } else if (zustand === 1) {
-                if (c === this.Sigma[1] && top === 'A') {
+                if (c === this.Alphabet[1] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[1] && top === 'B') {
+                } else if (c === this.Alphabet[1] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[1] && top === 'C') {
+                } else if (c === this.Alphabet[1] && top === 'C') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[3] && top === 'A') {
+                } else if (c === this.Alphabet[3] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[3] && top === 'B') {
+                } else if (c === this.Alphabet[3] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[3] && top === 'C') {
+                } else if (c === this.Alphabet[3] && top === 'C') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[5] && top === 'A') {
+                } else if (c === this.Alphabet[5] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[5] && top === 'B') {
+                } else if (c === this.Alphabet[5] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[5] && top === 'C') {
+                } else if (c === this.Alphabet[5] && top === 'C') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === this.Sigma[0] && top === '#') {
+                } else if (c === this.Alphabet[0] && top === '#') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[0] && top === 'A') {
+                } else if (c === this.Alphabet[0] && top === 'A') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[0] && top === 'B') {
+                } else if (c === this.Alphabet[0] && top === 'B') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[0] && top === 'C') {
+                } else if (c === this.Alphabet[0] && top === 'C') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === this.Sigma[2] && top === '#') {
+                } else if (c === this.Alphabet[2] && top === '#') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[2] && top === 'A') {
+                } else if (c === this.Alphabet[2] && top === 'A') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[2] && top === 'B') {
+                } else if (c === this.Alphabet[2] && top === 'B') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[2] && top === 'C') {
+                } else if (c === this.Alphabet[2] && top === 'C') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === this.Sigma[4] && top === '#') {
+                } else if (c === this.Alphabet[4] && top === '#') {
                     zustand = 0;
                     stack.push('C')
-                } else if (c === this.Sigma[4] && top === 'A') {
+                } else if (c === this.Alphabet[4] && top === 'A') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === this.Sigma[4] && top === 'B') {
+                } else if (c === this.Alphabet[4] && top === 'B') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === this.Sigma[4] && top === 'C') {
+                } else if (c === this.Alphabet[4] && top === 'C') {
                     zustand = 0;
                     stack.push('C');
                 } else if (c === '€' && top === '#') {
@@ -139,7 +135,7 @@ var A = {
                 }
                 continue;
             } else {
-                console.error("Im Zustand 2 darf es kein Zeichen mehr geben!!");
+                console.error("Im Zustand 2 darf es kein Zeichen mehr geben!");
                 return false;
             }
         }
@@ -156,11 +152,17 @@ var A = {
 function eval() {
     // 1. Ausdruck auslesen
     const eingabe = document.getElementById("eingabe");
-    const w = eingabe.textContent; // Wort w
-
+    const value = eingabe.textContent;
+    // Eingabe bereinigen
+    let wort = "";
+    for (const char of value) {
+        if (a.Alphabet.includes(char)) {
+            wort += char;
+        }
+    }
     // 2. Ausdruck als Wort w an Automaten A weitergeben und
     // 3. die Eingabe je nach Rückgabewert von einfärbt: true=grün, false=rot
-    if(w === "" || a.Akzeptor(w)) {
+    if(wort === "" || a.Akzeptor(wort)) {
         // färbe neutral
         eingabe.style = "background-color: ";
     } else {
@@ -184,8 +186,8 @@ function setAlphabet() {
     const c1 = input4.value;
     const c2 = input5.value;
 
-    const alphabet = [a1, a2, b1, b2, c1, c2];
-    a.Sigma = alphabet;
+    const Alphabet = [a1, a2, b1, b2, c1, c2];
+    a.Alphabet = Alphabet;
     eval();
 }
 
