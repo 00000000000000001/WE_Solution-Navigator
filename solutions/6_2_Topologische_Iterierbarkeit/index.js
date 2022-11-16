@@ -1,14 +1,11 @@
 class Vorrang {
     // Konstruktor nimmer Vorrangrelationen entgegen
     constructor (relationen) {
-        // for (const r of relationen){
-        //     console.log(r);
-        // }
         this._relationen = relationen;
     }
     [Symbol.iterator]() {
-        const that = this;
-        const props = this._relationen;
+        const that = this._relationen;
+        const props = Object.keys(this._relationen);
         let i = 0;
         return {
             next() {
@@ -25,4 +22,8 @@ const studentenLeben = new Vorrang( [
     [ "schlafen", "studieren" ],
     [ "essen", "studieren" ],
     [ "studieren", "prüfen" ]
-  ] )
+  ] );
+
+for ( const next of studentenLeben ) {
+    console.log( next );
+}
