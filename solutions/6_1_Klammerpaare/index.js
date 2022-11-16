@@ -155,11 +155,9 @@ function eval() {
     const eingabe = document.getElementById("eingabe");
     const w = eingabe.textContent; // Wort w
 
-    // 2. Ausdruck als Wort w an Automaten A weitergeben
-    const valid = a.Akzeptor(w);
-
-    // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
-    if(valid || w === "") {
+    // 2. Ausdruck als Wort w an Automaten A weitergeben und
+    // 3. die Eingabe je nach Rückgabewert von einfärbt: true=grün, false=rot
+    if(w === "" || a.Akzeptor(w)) {
         // färbe neutral
         eingabe.style = "background-color: ";
     } else {
