@@ -7,6 +7,9 @@ var A = {
 
         w += '€';
         const stack = ['#'];
+        stack.top = function() {
+            return this[stack.length - 1];
+        }
         let zustand = 0;
 
         for (const c of w) {
@@ -14,7 +17,7 @@ var A = {
             if (!this.Sigma.includes(c) && c !== '€' ) {
                 continue;
             }
-            const top = stack[stack.length - 1];
+            const top = stack.top();
             if (zustand === 0) {
                 if (c === this.Sigma[0] && top === '#') {
                     zustand = 0;
