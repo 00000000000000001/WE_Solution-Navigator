@@ -10,51 +10,55 @@ var A = {
         let zustand = 0;
 
         for (const c of w) {
+            // Guard lässt nur Zeichen durch, die im Alphabet enthalten sind
+            if (!this.Sigma.includes(c) && c !== '€' ) {
+                continue;
+            }
             const top = stack[stack.length - 1];
             if (zustand === 0) {
-                if (c === '(' && top === '#') {
+                if (c === this.Sigma[0] && top === '#') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '(' && top === 'A') {
+                } else if (c === this.Sigma[0] && top === 'A') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '(' && top === 'B') {
+                } else if (c === this.Sigma[0] && top === 'B') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '(' && top === 'C') {
+                } else if (c === this.Sigma[0] && top === 'C') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '[' && top === '#') {
+                } else if (c === this.Sigma[2] && top === '#') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '[' && top === 'A') {
+                } else if (c === this.Sigma[2] && top === 'A') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '[' && top === 'B') {
+                } else if (c === this.Sigma[2] && top === 'B') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '[' && top === 'C') {
+                } else if (c === this.Sigma[2] && top === 'C') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '{' && top === '#') {
+                } else if (c === this.Sigma[4] && top === '#') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === '{' && top === 'A') {
+                } else if (c === this.Sigma[4] && top === 'A') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === '{' && top === 'B') {
+                } else if (c === this.Sigma[4] && top === 'B') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === '{' && top === 'C') {
+                } else if (c === this.Sigma[4] && top === 'C') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === ')' && top === 'A') {
+                } else if (c === this.Sigma[1] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === ']' && top === 'B') {
+                } else if (c === this.Sigma[3] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === '}' && top === 'C') {
+                } else if (c === this.Sigma[5] && top === 'C') {
                     zustand = 1;
                     stack.pop();
                 } else {
@@ -62,67 +66,67 @@ var A = {
                 }
                 continue;
             } else if (zustand === 1) {
-                if (c === ')' && top === 'A') {
+                if (c === this.Sigma[1] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === ')' && top === 'B') {
+                } else if (c === this.Sigma[1] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === ')' && top === 'C') {
+                } else if (c === this.Sigma[1] && top === 'C') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === ']' && top === 'A') {
+                } else if (c === this.Sigma[3] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === ']' && top === 'B') {
+                } else if (c === this.Sigma[3] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === ']' && top === 'C') {
+                } else if (c === this.Sigma[3] && top === 'C') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === '}' && top === 'A') {
+                } else if (c === this.Sigma[5] && top === 'A') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === '}' && top === 'B') {
+                } else if (c === this.Sigma[5] && top === 'B') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === '}' && top === 'C') {
+                } else if (c === this.Sigma[5] && top === 'C') {
                     zustand = 1;
                     stack.pop();
-                } else if (c === '(' && top === '#') {
+                } else if (c === this.Sigma[0] && top === '#') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '(' && top === 'A') {
+                } else if (c === this.Sigma[0] && top === 'A') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '(' && top === 'B') {
+                } else if (c === this.Sigma[0] && top === 'B') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '(' && top === 'C') {
+                } else if (c === this.Sigma[0] && top === 'C') {
                     zustand = 0;
                     stack.push('A');
-                } else if (c === '[' && top === '#') {
+                } else if (c === this.Sigma[2] && top === '#') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '[' && top === 'A') {
+                } else if (c === this.Sigma[2] && top === 'A') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '[' && top === 'B') {
+                } else if (c === this.Sigma[2] && top === 'B') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '[' && top === 'C') {
+                } else if (c === this.Sigma[2] && top === 'C') {
                     zustand = 0;
                     stack.push('B');
-                } else if (c === '{' && top === '#') {
+                } else if (c === this.Sigma[4] && top === '#') {
                     zustand = 0;
                     stack.push('C')
-                } else if (c === '{' && top === 'A') {
+                } else if (c === this.Sigma[4] && top === 'A') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === '{' && top === 'B') {
+                } else if (c === this.Sigma[4] && top === 'B') {
                     zustand = 0;
                     stack.push('C');
-                } else if (c === '{' && top === 'C') {
+                } else if (c === this.Sigma[4] && top === 'C') {
                     zustand = 0;
                     stack.push('C');
                 } else if (c === '€' && top === '#') {
@@ -294,5 +298,3 @@ console.assert(a.Akzeptor("[{]") === false);
 
 console.assert(a.Akzeptor("{(}") === false);
 console.assert(a.Akzeptor("{[}") === false);
-
-// alert("s. Programmierbeispiel https://sibiwiki.de/wiki/index.php?title=Kellerautomat\n PDA-Simulator: https://automatonsimulator.com/");
