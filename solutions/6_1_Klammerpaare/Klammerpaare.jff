@@ -21,6 +21,13 @@
 			<from>1</from>
 			<to>0</to>
 			<read>(</read>
+			<pop>B</pop>
+			<push>AA</push>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>(</read>
 			<pop>Z</pop>
 			<push>AZ</push>
 		</transition>
@@ -30,6 +37,13 @@
 			<read>(</read>
 			<pop>A</pop>
 			<push>AA</push>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>(</read>
+			<pop>C</pop>
+			<push>AC</push>
 		</transition>
 		<transition>
 			<from>0</from>
@@ -79,6 +93,13 @@
 			<read>[</read>
 			<pop>B</pop>
 			<push>BB</push>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>[</read>
+			<pop>C</pop>
+			<push>BC</push>
 		</transition>
 		<transition>
 			<from>0</from>
@@ -133,6 +154,20 @@
 			<from>1</from>
 			<to>1</to>
 			<read>]</read>
+			<pop>A</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>]</read>
+			<pop>C</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>]</read>
 			<pop>B</pop>
 			<push/>
 		</transition>
@@ -179,6 +214,41 @@
 			<push/>
 		</transition>
 		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>)</read>
+			<pop>C</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>)</read>
+			<pop>B</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>{</read>
+			<pop>B</pop>
+			<push>CB</push>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>{</read>
+			<pop>A</pop>
+			<push>CA</push>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>0</to>
+			<read>[</read>
+			<pop>A</pop>
+			<push>BA</push>
+		</transition>
+		<transition>
 			<from>0</from>
 			<to>1</to>
 			<read>}</read>
@@ -189,7 +259,21 @@
 			<from>1</from>
 			<to>1</to>
 			<read>}</read>
+			<pop>A</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>}</read>
 			<pop>C</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>}</read>
+			<pop>B</pop>
 			<push/>
 		</transition>
 	</automaton>

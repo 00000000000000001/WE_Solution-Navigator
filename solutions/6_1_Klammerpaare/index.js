@@ -7,9 +7,136 @@ var A = {
 
         w += '€';
         const stack = ['#'];
-        const zustand = 0;
+        let zustand = 0;
 
-        
+        for (const c of w) {
+            const top = stack[stack.length - 1];
+            if (zustand === 0) {
+                if (c === '(' && top === '#') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '(' && top === 'A') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '(' && top === 'B') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '(' && top === 'C') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '[' && top === '#') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '[' && top === 'A') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '[' && top === 'B') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '[' && top === 'C') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '{' && top === '#') {
+                    zustand = 0;
+                    stack.push('C');
+                } else if (c === '{' && top === 'A') {
+                    zustand = 0;
+                    stack.push('C');
+                } else if (c === '{' && top === 'B') {
+                    zustand = 0;
+                    stack.push('C');
+                } else if (c === '{' && top === 'C') {
+                    zustand = 0;
+                    stack.push('C');
+                } else if (c === ')' && top === 'A') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === ']' && top === 'B') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === '}' && top === 'C') {
+                    zustand = 1;
+                    stack.pop();
+                } else {
+                    return false;
+                }
+                continue;
+            } else if (zustand === 1) {
+                if (c === ')' && top === 'A') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === ')' && top === 'B') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === ')' && top === 'C') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === ']' && top === 'A') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === ']' && top === 'B') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === ']' && top === 'C') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === '}' && top === 'A') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === '}' && top === 'B') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === '}' && top === 'C') {
+                    zustand = 1;
+                    stack.pop();
+                } else if (c === '(' && top === '#') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '(' && top === 'A') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '(' && top === 'B') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '(' && top === 'C') {
+                    zustand = 0;
+                    stack.push('A');
+                } else if (c === '[' && top === '#') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '[' && top === 'A') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '[' && top === 'B') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '[' && top === 'C') {
+                    zustand = 0;
+                    stack.push('B');
+                } else if (c === '{' && top === '#') {
+                    zustand = 0;
+                    stack.push('C')
+                } else if (c === '{' && top === 'A') {
+                    zustand = 0;
+                    stack.push('C');
+                } else if (c === '{' && top === 'B') {
+                    zustand = 0;
+                    stack.push('C');
+                } else if (c === '{' && top === 'C') {
+                    zustand = 0;
+                    stack.push('C');
+                } else if (c === '€' && top === '#') {
+                    zustand = 2;
+                } else {
+                    return false;
+                }
+                continue;
+            } else {
+                console.error("Im Zustand 2 darf es kein Zeichen mehr geben!!");
+                return false;
+            }
+        }
+        return (zustand === 2);
     },
     toString: function() {
         const q = "q: " + this.q;
@@ -74,98 +201,98 @@ console.assert(a.Akzeptor(")()") === false);
 console.assert(a.Akzeptor("))") === false);
 console.assert(a.Akzeptor("((") === false);
 
-// console.assert(a.Akzeptor("()") === true);
-// console.assert(a.Akzeptor("[]") === true);
-// console.assert(a.Akzeptor("{}") === true);
+console.assert(a.Akzeptor("()") === true);
+console.assert(a.Akzeptor("[]") === true);
+console.assert(a.Akzeptor("{}") === true);
 
-// console.assert(a.Akzeptor("(())") === true);
-// console.assert(a.Akzeptor("[[]]") === true);
-// console.assert(a.Akzeptor("{{}}") === true);
+console.assert(a.Akzeptor("(())") === true);
+console.assert(a.Akzeptor("[[]]") === true);
+console.assert(a.Akzeptor("{{}}") === true);
 
-// console.assert(a.Akzeptor("([])") === true);
-// console.assert(a.Akzeptor("[{}]") === true);
-// console.assert(a.Akzeptor("{()}") === true);
+console.assert(a.Akzeptor("([])") === true);
+console.assert(a.Akzeptor("[{}]") === true);
+console.assert(a.Akzeptor("{()}") === true);
 
-// console.assert(a.Akzeptor("({})") === true);
-// console.assert(a.Akzeptor("[()]") === true);
-// console.assert(a.Akzeptor("{[]}") === true);
+console.assert(a.Akzeptor("({})") === true);
+console.assert(a.Akzeptor("[()]") === true);
+console.assert(a.Akzeptor("{[]}") === true);
 
-// console.assert(a.Akzeptor("()()") === true);
-// console.assert(a.Akzeptor("[][]") === true);
-// console.assert(a.Akzeptor("{}{}") === true);
+console.assert(a.Akzeptor("()()") === true);
+console.assert(a.Akzeptor("[][]") === true);
+console.assert(a.Akzeptor("{}{}") === true);
 
-// console.assert(a.Akzeptor("()[]") === true);
-// console.assert(a.Akzeptor("[]{}") === true);
-// console.assert(a.Akzeptor("{}()") === true);
+console.assert(a.Akzeptor("()[]") === true);
+console.assert(a.Akzeptor("[]{}") === true);
+console.assert(a.Akzeptor("{}()") === true);
 
-// console.assert(a.Akzeptor("(){}") === true);
-// console.assert(a.Akzeptor("[]()") === true);
-// console.assert(a.Akzeptor("{}[]") === true);
+console.assert(a.Akzeptor("(){}") === true);
+console.assert(a.Akzeptor("[]()") === true);
+console.assert(a.Akzeptor("{}[]") === true);
 
-// console.assert(a.Akzeptor("[()()]") === true);
-// console.assert(a.Akzeptor("{[][]}") === true);
-// console.assert(a.Akzeptor("({}{})") === true);
+console.assert(a.Akzeptor("[()()]") === true);
+console.assert(a.Akzeptor("{[][]}") === true);
+console.assert(a.Akzeptor("({}{})") === true);
 
-// console.assert(a.Akzeptor("{()[]}") === true);
-// console.assert(a.Akzeptor("([]{})") === true);
-// console.assert(a.Akzeptor("[{}()]") === true);
+console.assert(a.Akzeptor("{()[]}") === true);
+console.assert(a.Akzeptor("([]{})") === true);
+console.assert(a.Akzeptor("[{}()]") === true);
 
-// console.assert(a.Akzeptor("(") === false);
-// console.assert(a.Akzeptor("[") === false);
-// console.assert(a.Akzeptor("{") === false);
+console.assert(a.Akzeptor("(") === false);
+console.assert(a.Akzeptor("[") === false);
+console.assert(a.Akzeptor("{") === false);
 
-// console.assert(a.Akzeptor(")") === false);
-// console.assert(a.Akzeptor("]") === false);
-// console.assert(a.Akzeptor("}") === false);
+console.assert(a.Akzeptor(")") === false);
+console.assert(a.Akzeptor("]") === false);
+console.assert(a.Akzeptor("}") === false);
 
-// console.assert(a.Akzeptor("()(") === false);
-// console.assert(a.Akzeptor("[][") === false);
-// console.assert(a.Akzeptor("{}{") === false);
+console.assert(a.Akzeptor("()(") === false);
+console.assert(a.Akzeptor("[][") === false);
+console.assert(a.Akzeptor("{}{") === false);
 
-// console.assert(a.Akzeptor("())") === false);
-// console.assert(a.Akzeptor("[]]") === false);
-// console.assert(a.Akzeptor("{}}") === false);
+console.assert(a.Akzeptor("())") === false);
+console.assert(a.Akzeptor("[]]") === false);
+console.assert(a.Akzeptor("{}}") === false);
 
-// console.assert(a.Akzeptor("(()") === false);
-// console.assert(a.Akzeptor("[[]") === false);
-// console.assert(a.Akzeptor("{{}") === false);
+console.assert(a.Akzeptor("(()") === false);
+console.assert(a.Akzeptor("[[]") === false);
+console.assert(a.Akzeptor("{{}") === false);
 
-// console.assert(a.Akzeptor(")()") === false);
-// console.assert(a.Akzeptor("][]") === false);
-// console.assert(a.Akzeptor("}{}") === false);
+console.assert(a.Akzeptor(")()") === false);
+console.assert(a.Akzeptor("][]") === false);
+console.assert(a.Akzeptor("}{}") === false);
 
-// console.assert(a.Akzeptor("(]") === false);
-// console.assert(a.Akzeptor("[}") === false);
-// console.assert(a.Akzeptor("{)") === false);
+console.assert(a.Akzeptor("(]") === false);
+console.assert(a.Akzeptor("[}") === false);
+console.assert(a.Akzeptor("{)") === false);
 
-// console.assert(a.Akzeptor("(}") === false);
-// console.assert(a.Akzeptor("[)") === false);
-// console.assert(a.Akzeptor("{]") === false);
+console.assert(a.Akzeptor("(}") === false);
+console.assert(a.Akzeptor("[)") === false);
+console.assert(a.Akzeptor("{]") === false);
 
-// console.assert(a.Akzeptor("[(][)]") === false);
-// console.assert(a.Akzeptor("{(}{)}") === false);
-// console.assert(a.Akzeptor("([)(])") === false);
+console.assert(a.Akzeptor("[(][)]") === false);
+console.assert(a.Akzeptor("{(}{)}") === false);
+console.assert(a.Akzeptor("([)(])") === false);
 
-// console.assert(a.Akzeptor("{[}{]}") === false);
-// console.assert(a.Akzeptor("({)(})") === false);
-// console.assert(a.Akzeptor("[{][}]") === false);
+console.assert(a.Akzeptor("{[}{]}") === false);
+console.assert(a.Akzeptor("({)(})") === false);
+console.assert(a.Akzeptor("[{][}]") === false);
 
-// console.assert(a.Akzeptor("(])") === false);
-// console.assert(a.Akzeptor("(})") === false);
+console.assert(a.Akzeptor("(])") === false);
+console.assert(a.Akzeptor("(})") === false);
 
-// console.assert(a.Akzeptor("[)]") === false);
-// console.assert(a.Akzeptor("[}]") === false);
+console.assert(a.Akzeptor("[)]") === false);
+console.assert(a.Akzeptor("[}]") === false);
 
-// console.assert(a.Akzeptor("{)}") === false);
-// console.assert(a.Akzeptor("{]}") === false);
+console.assert(a.Akzeptor("{)}") === false);
+console.assert(a.Akzeptor("{]}") === false);
 
-// console.assert(a.Akzeptor("([)") === false);
-// console.assert(a.Akzeptor("({)") === false);
+console.assert(a.Akzeptor("([)") === false);
+console.assert(a.Akzeptor("({)") === false);
 
-// console.assert(a.Akzeptor("[(]") === false);
-// console.assert(a.Akzeptor("[{]") === false);
+console.assert(a.Akzeptor("[(]") === false);
+console.assert(a.Akzeptor("[{]") === false);
 
-// console.assert(a.Akzeptor("{(}") === false);
-// console.assert(a.Akzeptor("{[}") === false);
+console.assert(a.Akzeptor("{(}") === false);
+console.assert(a.Akzeptor("{[}") === false);
 
-alert("s. Programmierbeispiel https://sibiwiki.de/wiki/index.php?title=Kellerautomat\n PDA-Simulator: https://automatonsimulator.com/");
+// alert("s. Programmierbeispiel https://sibiwiki.de/wiki/index.php?title=Kellerautomat\n PDA-Simulator: https://automatonsimulator.com/");
