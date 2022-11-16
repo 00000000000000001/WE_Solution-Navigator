@@ -159,7 +159,7 @@ function eval() {
     const valid = a.Akzeptor(w);
 
     // 3. Eingabe je nach Rückgabewert von A.eval(w) einfärben: true=grün, false=rot
-    if(valid) {
+    if(valid || w === "") {
         // färbe neutral
         eingabe.style = "background-color: ";
     } else {
