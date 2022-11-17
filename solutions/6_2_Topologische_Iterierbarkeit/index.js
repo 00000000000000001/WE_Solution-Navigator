@@ -14,7 +14,8 @@ class Vorrang {
     }
     next() {
         // Berechne nächsten Task
-        const task = Array.from(this._tasks)[0];
+        const iterator = this._tasks.values();
+        const task = iterator.next().value;
         // Lösche Task aus _tasks
         this._tasks.delete(task);
         // Gebe Task zurück
