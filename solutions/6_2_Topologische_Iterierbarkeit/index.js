@@ -5,13 +5,9 @@ class Vorrang {
         relationen.flat().forEach(element => {
             this._tasks.add(element);
         });
-        this._done = false;
+        this._tasks.add(""); // "" erleichtert die iterierbarkeit der Klasse
     }
     next() {
-        if (this._tasks.size === 0) {
-            this._done = true;
-            return;
-        }
         // Berechne nächsten Task
         const task = Array.from(this._tasks)[0];
         // Lösche Task aus _tasks
@@ -25,7 +21,7 @@ class Vorrang {
             next() {
                 return {
                     value: that.next(),
-                    done: that._done
+                    done: that._tasks.size === 0
                 }
             }
         }
