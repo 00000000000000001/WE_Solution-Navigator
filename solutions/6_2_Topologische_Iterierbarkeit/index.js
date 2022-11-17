@@ -1,16 +1,9 @@
 class Vorrang {
     constructor (relationen) {
         this._relationen = relationen;
-        this._tasks = new Set();
-        this.collect(relationen);
-    }
-    // Sammelt Tasks aus den Relationen auf und fügt sie der Menge _tasks hinzu
-    collect(relationen) {
-        this._tasks.clear();
-        relationen.flat().forEach(element => {
-            this._tasks.add(element);
-        });
+        this._tasks = new Set(relationen.flat());
         this._tasks.add(""); // "" erleichtert die iterierbarkeit der Klasse
+        // this.collect(relationen);
     }
     next() {
         // Berechne nächsten Task
