@@ -7,14 +7,18 @@ class Vorrang {
         });
         console.log(Object.values(this._tasks));
     }
+    next() {
+        // Berechne nächsten Task
+        // Lösche Task aus _tasks
+        // Gebe Task zurück
+    }
     [Symbol.iterator]() {
         const that = this;
-        let i = 0;
         return{
             next() {
                 return {
-                    value: Array.from(that._tasks)[i++],
-                    done: i > that._tasks.size
+                    value: that.next(),
+                    done: that._tasks.size === 0
                 }
             }
         }
