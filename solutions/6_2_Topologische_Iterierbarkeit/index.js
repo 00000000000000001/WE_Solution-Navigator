@@ -2,9 +2,8 @@ class Vorrang {
     constructor (relationen) {
         this._relationen = relationen;
         this._tasks = new Set(relationen.flat());
-        // this._tasks.add(""); // "" erleichtert die iterierbarkeit der Klasse
         this._sorted = new Set();
-        this._iterator = this._tasks.values();
+        this._tasks.add(""); // "" erleichtert die iterierbarkeit
     }
     dep(task) {
         const res = new Set();
@@ -24,21 +23,14 @@ class Vorrang {
         return true;
     }
     next() {
-        if (this._tasks.size === 0){
-            return;
+        for(const task of this._tasks){
+            let dep = this.dep(task);
+            if (dep.size === 0 || this.isSuperset(this._sorted, dep)){
+                this._sorted.add(task);
+                this._tasks.delete(task);
+                return task;
+            }
         }
-        
-        
-        let task = this._iterator.next().value;
-        let dep = this.dep(task);
-        if (dep.size === 0 || this.isSuperset(this._sorted, dep)){
-            this._sorted.add(task);
-            this._tasks.delete(task);
-        }else{
-            this.next();
-        }
-
-        return task;
     }
     [Symbol.iterator]() {
         const that = this;
@@ -46,7 +38,7 @@ class Vorrang {
             next() {
                 return {
                     value: that.next(),
-                    done: value === undefined
+                    done: that._tasks.size === 0
                 }
             }
         }
@@ -59,22 +51,34 @@ const studentenLeben = new Vorrang( [
         [ "studieren", "prüfen" ]
     ] );
 
-// for ( const next of studentenLeben ) {
-//     console.log(next );
-// }
+for ( const next of studentenLeben ) {
+    console.log(next);
+}
 
-console.assert(studentenLeben._relationen.length === 3);
-console.assert(Array.from(studentenLeben._tasks)[0] === "schlafen");
-console.assert(Array.from(studentenLeben._tasks)[1] === "studieren");
-console.assert(Array.from(studentenLeben._tasks)[2] === "essen");
-console.assert(Array.from(studentenLeben._tasks)[3] === "prüfen");
-console.assert(studentenLeben._tasks.size === 4);
-console.assert(studentenLeben.dep("schlafen").size === 0);
-console.assert(Array.from(studentenLeben.dep("studieren"))[0] === "schlafen");
-console.assert(Array.from(studentenLeben.dep("studieren"))[1] === "essen");
-console.assert(studentenLeben.dep("studieren").size === 2);
-console.assert(studentenLeben.dep("essen").size === 0);
-console.assert(Array.from(studentenLeben.dep("prüfen"))[0] === "studieren");
-console.assert(studentenLeben.dep("prüfen").size === 1);
-console.assert(studentenLeben.isSuperset(studentenLeben._tasks, new Set(["schlafen"])));
-console.assert(!studentenLeben.isSuperset(studentenLeben._tasks, new Set(["Haus"])));
+
+ // Tests
+const test = new Vorrang( [
+    [ "schlafen", "studieren" ],
+    [ "essen", "studieren" ],
+    [ "studieren", "prüfen" ]
+] );
+
+console.assert(test._relationen.length === 3);
+console.assert(Array.from(test._tasks)[0] === "schlafen");
+console.assert(Array.from(test._tasks)[1] === "studieren");
+console.assert(Array.from(test._tasks)[2] === "essen");
+console.assert(Array.from(test._tasks)[3] === "prüfen");
+console.assert(test._tasks.size === 5);
+console.assert(test.dep("schlafen").size === 0);
+console.assert(Array.from(test.dep("studieren"))[0] === "schlafen");
+console.assert(Array.from(test.dep("studieren"))[1] === "essen");
+console.assert(test.dep("studieren").size === 2);
+console.assert(test.dep("essen").size === 0);
+console.assert(Array.from(test.dep("prüfen"))[0] === "studieren");
+console.assert(test.dep("prüfen").size === 1);
+console.assert(test.isSuperset(test._tasks, new Set(["schlafen"])));
+console.assert(!test.isSuperset(test._tasks, new Set(["Haus"])));
+console.assert(test.next() === "schlafen");
+console.assert(test.next() === "essen");
+console.assert(test.next() === "studieren");
+console.assert(test.next() === "prüfen");
