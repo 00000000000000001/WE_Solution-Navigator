@@ -48,7 +48,7 @@ const log = [];
 
 const handler = {
     get( target, prop, receiver ) {
-        log.push( 'GET ' + prop );
+        log.push( 'Tasks left: ' + target._tasks.size );
     return 1; // return target.size 
     },
     has(target, prop) {
