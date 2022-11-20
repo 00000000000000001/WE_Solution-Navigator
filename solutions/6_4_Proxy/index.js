@@ -84,3 +84,5 @@ console.assert(test.next() === "schlafen");
 console.assert(test.next() === "essen");
 console.assert(test.next() === "studieren");
 console.assert(test.next() === "prüfen");
+
+alert("Aufgabe neu bearbeiten. Proxy macht so wenig Sinn");
