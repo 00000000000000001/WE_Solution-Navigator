@@ -44,11 +44,9 @@ const studentenLeben = new Vorrang( [
         [ "studieren", "prüfen" ]
     ] );
 
-const log = [];
-
 const handler = {
     get( target, prop, receiver ) {
-        log.push( 'Tasks left: ' + target._tasks.size );
+        console.log( 'Tasks left: ' + target._tasks.size );
         // return 1; // return target.size 
     }
 };
@@ -56,12 +54,9 @@ const handler = {
 const proxy = new Proxy( studentenLeben, handler );
 
 for ( const next of studentenLeben ) {
-    // console.log(next);
+    console.log(next);
     proxy.next;
 }
-
-console.log(log);
-
 
  // Tests
 const test = new Vorrang( [
