@@ -49,12 +49,9 @@ const log = [];
 const handler = {
     get( target, prop, receiver ) {
         log.push( 'Tasks left: ' + target._tasks.size );
-    return 1; // return target.size 
-    },
-    has(target, prop) {
-    log.push( 'HAS ' + prop );
-    return prop in target; // return true;
-    } };
+        // return 1; // return target.size 
+    }
+};
 
 const proxy = new Proxy( studentenLeben, handler );
 
