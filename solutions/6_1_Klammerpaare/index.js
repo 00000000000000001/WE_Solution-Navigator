@@ -8,7 +8,7 @@ var A = {
         w += '€';
         const stack = ['#'];
         stack.top = function() {
-            return this[stack.length - 1];
+            return this[this.length - 1];
         }
         let zustand = 0;
 
