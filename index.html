@@ -4,25 +4,28 @@
         Solution-Navigator: Main Page
     </title>
     <style>
+        @import url('https://fonts.cdnfonts.com/css/bauhaus-modern');
         *{
             box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: 'Bauhaus Modern', sans-serif;
         }
         .container{
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             grid-template-rows: 5em repeat(10, 1fr) 5em;
-            border: dotted red;
+            /* border: dotted red; */
+            background-color: #b8e09a;
         }
         .header{
             display: flex;
-            background-color: red;
+            /* background-color: red; */
             grid-column: 1/13;
             grid-row: 5em;
             justify-content: center;
         }
         .nav{
-            background-color: blue;
+            /* background-color: blue; */
             display: flex;
             grid-column: 1/13;
             justify-content: center;
@@ -33,7 +36,7 @@
             background-color: orange;
             display: flex;
             justify-content: center;
-            border: solid black;
+            border: solid thin black;
         }
         a{
             text-decoration: none;
@@ -49,13 +52,13 @@
             padding-right: 1em;
         }
         .article{
-            background-color: greenyellow;
+            /* background-color: greenyellow; */
             display: flex;
             grid-column: 1/13;
             grid-row: 3/12;
         }
         .footer{
-            background-color: magenta;
+            /* background-color: magenta; */
             display: flex;
             grid-column: 1/13;
             grid-row: 12/13;
