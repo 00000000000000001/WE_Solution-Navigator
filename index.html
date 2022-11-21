@@ -14,7 +14,7 @@
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             grid-template-rows: 5em repeat(10, 1fr) 5em;
-            /* border: dotted red; */
+            border: solid #b8e09a;
             background-color: #b8e09a;
         }
         .header{
@@ -25,7 +25,7 @@
             justify-content: center;
         }
         .nav{
-            /* background-color: blue; */
+            background-color: white;
             display: flex;
             grid-column: 1/13;
             justify-content: center;
@@ -37,6 +37,7 @@
             display: flex;
             justify-content: center;
             border: solid thin black;
+            /* border-radius: 1em; */
         }
         a{
             text-decoration: none;
@@ -52,7 +53,7 @@
             padding-right: 1em;
         }
         .article{
-            /* background-color: greenyellow; */
+            background-color: white;
             display: flex;
             grid-column: 1/13;
             grid-row: 3/12;
@@ -62,6 +63,10 @@
             display: flex;
             grid-column: 1/13;
             grid-row: 12/13;
+            padding: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            align-items: center;
         }
         @media (min-width: 700px) {
             .nav{
@@ -111,6 +116,10 @@
 
         </nav>
         <article class="article"></article>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            Jonas Mager<br>
+            HS-BRS<br>
+            Einführung Webdesign (Prof. Dr. M. Kaul), WS 22/23
+        </footer>
     </div>
 </body>
