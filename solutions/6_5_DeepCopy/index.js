@@ -37,7 +37,14 @@ function deepCopy( struct ){
         // "a: somestring"
         // "b: 42"
   */
- return {};
+
+ // Algorithmus:
+ // - durchlaufe jeden Eintrag in struct
+    for (const [key, value] of Object.entries(struct)) {
+        typeof(value) === "object" ? deepCopy(value) : console.log(`${key}: ${value}`);
+        // console.log(typeof(value));
+        // console.log(`${key}: ${value}`);
+    }
 }
 
 const struct = {
