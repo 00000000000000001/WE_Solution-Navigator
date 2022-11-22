@@ -1,3 +1,18 @@
+/*
+6.5. DeepCopy
+
+Schreiben Sie eine rekursive Funktion deepCopy( struct ) als ES6-Ausdruck, sodass beliebig geschachtelte Arrays und Objekte tiefenkopiert werden können.
+
+Verwenden Sie zu diesem Zweck:
+
+    konditionalen ternären Operator
+    Array.map()
+    Object.fromEntries()
+    Object.entries()
+
+Verwenden Sie dabei nur Arrow-Funktionen und Ausdrücke, keine Anweisungen, keine Blöcke und keine JSON-Methoden. Nutzen Sie für Ihre Tests console.assert. 
+*/
+
 function deepCopy( struct ){
     return Object.fromEntries(Object.entries(struct));
 }
@@ -19,3 +34,7 @@ console.assert(copy.b.a === struct.b.a);
 console.assert(copy.b.b === struct.b.b);
 console.assert(copy.c === struct.c);
 console.assert(copy !== struct);
+
+
+alert(`Die Aufgabe muss nochmal neu bearbeitet werden. 
+Die Lösung entspricht nicht den Anforderungen wie Sie in der Aufgabe gestellt wurden (Rekursion).`);
