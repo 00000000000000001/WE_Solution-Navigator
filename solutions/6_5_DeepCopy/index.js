@@ -41,7 +41,9 @@ function deepCopy( struct ){
  // Algorithmus:
  // - durchlaufe jeden Eintrag in struct
     for (const [key, value] of Object.entries(struct)) {
-        typeof(value) === "object" ? deepCopy(value) : console.log(`${key}: ${value}`);
+        typeof(value) === "object" ? deepCopy(value) : console.log([key, value]);
+        console.log(new Map([[key, value]]));
+        console.log(Object.fromEntries(new Map([[key, value]])));
         // console.log(typeof(value));
         // console.log(`${key}: ${value}`);
     }
