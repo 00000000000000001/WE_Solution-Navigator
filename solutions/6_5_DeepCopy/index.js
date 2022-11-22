@@ -1,5 +1,5 @@
 function deepCopy( struct ){
-    return Object.fromEntries(new Map(Object.entries(struct)));
+    return Object.fromEntries(Object.entries(struct));
 }
 
 const struct = {
@@ -18,3 +18,4 @@ console.assert(copy.a === struct.a);
 console.assert(copy.b.a === struct.b.a);
 console.assert(copy.b.b === struct.b.b);
 console.assert(copy.c === struct.c);
+console.assert(copy !== struct);
