@@ -82,3 +82,14 @@ function methodize( func ) {
 
 Number.prototype.add = methodize(add);
 console.assert((3).add(4) === 7);
+
+//
+
+function demethodize( method ) {
+    return function(x,y) {
+        Number.prototype.demethodize = method;
+        return (x).demethodize(y);
+    }
+}
+
+console.assert(demethodize(Number.prototype.add)(5, 6) === 11);
