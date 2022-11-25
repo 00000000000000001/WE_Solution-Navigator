@@ -54,3 +54,23 @@ console.assert(copy.c !== struct.c);
 
 // alert(`Die Aufgabe muss nochmal neu bearbeitet werden. 
 // Die Lösung entspricht nicht den Anforderungen wie Sie in der Aufgabe gestellt wurden (Rekursion).`);
+
+
+/*
+
+ 1.4. Der Function - Konstruktor
+13
+const sum = new Function('a', 'b', 'return a + b');
+const database = {
+add: { params: ['a','b'], body: 'return a + b' },
+mul: { params: ['x','y'], body: 'return x * y' },
+};
+const f = Object.fromEntries(
+Object.entries( database )
+.map(([key, val]) => [key,
+new Function(...val.params, val.body)]) );
+console.log( f.add( 3,4 ) );
+console.log( f.mul( 3,4 ) );
+https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Obje
+
+*/
