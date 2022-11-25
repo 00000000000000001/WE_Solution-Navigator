@@ -181,3 +181,24 @@ function counterf( start ) {
 let counter = counterf(10);
 console.assert(counter.inc() === 11);
 console.assert(counter.dec() === 10);
+
+//
+
+function revocable( func ) {
+    let f = func;
+    return {
+        invoke(msg){
+            return f(msg);
+        },
+        revoke(){
+            // f = function(){};
+            f = undefined;
+        }
+    }
+}
+
+
+temp = revocable(alert);
+temp.invoke(7);
+temp.revoke();
+temp.invoke(8);
