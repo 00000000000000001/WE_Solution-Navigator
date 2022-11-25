@@ -71,3 +71,14 @@ function inc3(x) {
 }
 
 console.assert(inc3(1) === 2);
+
+//
+
+function methodize( func ) {
+    return function add(y) {
+        return func(this, y);
+    }
+}
+
+Number.prototype.add = methodize(add);
+console.assert((3).add(4) === 7);
