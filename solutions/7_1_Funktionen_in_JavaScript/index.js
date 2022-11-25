@@ -93,3 +93,27 @@ function demethodize( method ) {
 }
 
 console.assert(demethodize(Number.prototype.add)(5, 6) === 11);
+
+//
+
+function twice( func ) {
+    return function(x) {
+        return func(x,x);
+    }
+}
+
+const double = twice(add);
+console.assert(double(11) === 22);
+
+const square = twice(mul);
+console.assert(square(11) === 121);
+
+//
+
+function composeu(func1, func2) {
+    return function(x) {
+        return func2(func1(x));
+    }
+}
+
+console.assert(composeu(double, square)(3) === 36);
