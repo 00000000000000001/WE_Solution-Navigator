@@ -53,3 +53,21 @@ const mul3 = curry(mul, 5)(6);
 console.assert(mul3 === 30);
 
 //
+
+function inc1(x) {
+    return addf(x)(1);
+}
+
+console.assert(inc1(1) === 2);
+
+function inc2(x) {
+    return applyf(add)(x)(1);
+}
+
+console.assert(inc2(1) === 2);
+
+function inc3(x) {
+    return curry(add, x)(1);
+}
+
+console.assert(inc3(1) === 2);
