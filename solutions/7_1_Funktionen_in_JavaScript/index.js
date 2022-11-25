@@ -35,3 +35,21 @@ function mul(x,y) {
 console.assert(applyf(mul)(5)(6) === 30);
 
 // 
+
+function curry( func, x) {
+    return function(y) {
+        return func(x,y);
+    }
+}
+
+function add(x,y) {
+    return x+y;
+}
+
+const add3 = curry(add, 3)(4);
+console.assert(add3 === 7);
+
+const mul3 = curry(mul, 5)(6);
+console.assert(mul3 === 30);
+
+//
