@@ -14,7 +14,10 @@ Verwenden Sie dabei nur Arrow-Funktionen und Ausdrücke, keine Anweisungen, kein
 */
 
 function deepCopy( struct ){
-    return Object.fromEntries(Object.entries(struct));
+    
+    if (!Array.isArray(struct))
+    Object.entries(struct).map( x => (x.forEach(y => deepCopy(y))));    
+
 }
 
 const struct = {
@@ -49,5 +52,5 @@ console.assert(copy.b.b !== struct.b.b);
 console.assert(copy.c !== struct.c);
 
 
-alert(`Die Aufgabe muss nochmal neu bearbeitet werden. 
-Die Lösung entspricht nicht den Anforderungen wie Sie in der Aufgabe gestellt wurden (Rekursion).`);
+// alert(`Die Aufgabe muss nochmal neu bearbeitet werden. 
+// Die Lösung entspricht nicht den Anforderungen wie Sie in der Aufgabe gestellt wurden (Rekursion).`);
