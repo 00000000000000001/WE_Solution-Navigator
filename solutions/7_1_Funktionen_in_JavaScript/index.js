@@ -158,7 +158,7 @@ function once( func ){
 
 add_once = once(add);
 
-console.log(add_once(3,4));
+// console.log(add_once(3,4));
 console.assert(add_once(3,4) === 7);
 console.assert(add_once(3,4) !== 7);
 
@@ -197,8 +197,34 @@ function revocable( func ) {
     }
 }
 
-
 temp = revocable(alert);
 temp.invoke(7);
 temp.revoke();
 temp.invoke(8);
+
+//
+
+let wrapper = (function () {
+    let arr = [];
+
+    return {
+        get : function(i) {
+            return arr[i];
+        },
+        store : function(i, value) {
+            arr[i] = value;
+        },
+        append : function(value) {
+            arr.push(value);
+        }
+    }
+
+}());
+
+my_vector = vector();
+my_vector.append(7);
+my_vector.store(1, 8);
+console.assert(my_vector.get(0) === 7); // 7
+console.assert(my_vector.get(1) === 8); // 8
+
+console.log(my_vector.arr);
