@@ -28,7 +28,7 @@ function applyf( func ) {
     }
 }
 
-function mul(x,y) {
+function mul(x,y) {
     return x*y;
 }
 
@@ -117,3 +117,67 @@ function composeu(func1, func2) {
 }
 
 console.assert(composeu(double, square)(3) === 36);
+
+//
+
+function composeb( func1, func2 ) {
+    return function ( x, y, z ) {
+        return func2(func1(x,y),z);
+    }
+}
+
+console.assert(composeb(add, mul)(2, 3, 5) === 25);
+
+//
+
+// function once( func ) {
+//     var ex = false;
+//     return (function(){
+//         if (!ex){
+//             ex = true;
+//             return func;
+//         } else{
+//             console.log("behindert?");
+//         }
+//     })();
+// }
+
+// add_once = once(add);
+
+function once( func ){
+    var ex = false;
+    return (function(  ){
+        if (ex){
+            return;
+        } else {
+            ex = true;
+            return func;
+        }
+    })();
+};
+
+add_once = once(add);
+
+console.log(add_once(3,4));
+console.assert(add_once(3,4) === 7);
+console.assert(add_once(3,4) !== 7);
+
+//
+
+function counterf( start ) {
+    return (function(){
+        var inner = start;
+        return {
+            inc: function(){
+                return ++inner;
+            },
+            dec: function(){
+                return --inner;
+            }
+        }
+    })();
+}
+
+let counter = counterf(10);
+console.assert(counter.inc() === 11);
+console.assert(counter.dec() === 10);
