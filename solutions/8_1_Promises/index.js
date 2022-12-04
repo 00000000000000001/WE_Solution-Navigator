@@ -8,4 +8,5 @@ Geschwindigkeit durch maximale Parallelität. Achten Sie gleichzeitig
 auf Korrektheit. Verwenden Sie dabei ausschließlich die Promise API 
 ohne async / await.`
 
-fetch( 'A.txt' ).then( response => console.log(response) )
+fetch('A.txt').then(response => console.log(response));
+fetch('B.txt').then(response => console.log(response)); 
