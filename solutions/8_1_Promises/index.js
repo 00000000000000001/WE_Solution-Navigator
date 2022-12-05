@@ -8,5 +8,23 @@ Geschwindigkeit durch maximale Parallelität. Achten Sie gleichzeitig
 auf Korrektheit. Verwenden Sie dabei ausschließlich die Promise API 
 ohne async / await.`
 
-fetch('A.txt').then(response => console.log(response));
-fetch('B.txt').then(response => console.log(response)); 
+var datei1 = "";
+var datei2 = "";
+Promise.all([
+    fetch('A.txt').then(
+        response => response.text()
+    ).then(value => datei1 = value),
+    fetch('B.txt').then(
+        response => response.text()
+    ).then(value => datei2 = value)
+])
+.then(arr => {
+    let zeile = "";
+    for(let i = 0; i < arr[0].split('\n').length; ++i){
+        zeile = "";
+        zeile += arr[0].split('\n')[i];
+        zeile += arr[1].split('\n')[i];
+        console.log(zeile);
+    }
+}
+);
