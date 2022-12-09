@@ -11,6 +11,12 @@
       "references": [
         "https://developer.mozilla.org/de/docs/Web/HTML/Element/p"
       ]
+    },
+    "article": {
+      "content": "Aus dem Englischen übersetzt-HTML5-Artikel ist ein semantisches HTML5-Element, ähnlich wie <section> und <header>. Es wird am häufigsten verwendet, um Informationen zu enthalten, die unabhängig vom Rest der Website oder Anwendung, in der es erscheint, verteilt werden können.",
+      "references": [
+        "https://en.wikipedia.org/wiki/Article_element"
+      ]
     }
   },
   "css": {
@@ -24,6 +30,12 @@
       "content": "Der CSS Datentyp Color beschreibt eine Farbe im sRGB Farbraum. Eine Farbe kann auf eine von drei Arten beschrieben werden: Schlüsselworte, rgb und rgba, hsl und hsla.",
       "references": [
         "https://developer.mozilla.org/de/docs/Web/CSS/Farben"
+      ]
+    },
+    "grid": {
+      "content": "Aus dem Englischen übersetzt-In Cascading Style Sheets erstellt CSS Grid Layout oder CSS Grid komplexe responsive Webdesign Grid Layouts einfacher und konsistenter über Browser hinweg.",
+      "references": [
+        "https://en.wikipedia.org/wiki/CSS_grid_layout"
       ]
     }
   },
