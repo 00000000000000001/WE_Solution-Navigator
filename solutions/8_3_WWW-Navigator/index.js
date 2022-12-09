@@ -23,11 +23,18 @@ function show_article( value ){
 	article.textContent = map_content.get(value);
 }
 
+function show_references( value ){
+	let article = document.getElementById('references');
+	article.textContent = "";
+	article.textContent = map_ref.get(value);
+}
+
 function addKnopf( value ){
 	let knopf = document.createElement('div');
 	knopf.className = 'button';
 	knopf.addEventListener("click", function (){
 		show_article(value);
+		show_references(value);
 	});
 	knopf.textContent = value;
 	let menu = document.getElementById('untermenue');
@@ -35,7 +42,7 @@ function addKnopf( value ){
 }
 
 function show( key ){
-	const menu = a[key];
+	const menu = data[key];
 	clearUntermenue();
 	Object.entries(menu).forEach(([key, value]) => {
 		addKnopf(key);
