@@ -100,14 +100,16 @@
                 display: flex;
                 grid-column: 1/4;
                 grid-row: 3/12;
+                flex-direction: column;
                 padding: 1em;
                 font-family: Arial, Helvetica, sans-serif;
             }
             .right-article{
-                background-color: black;
+                background-color: red;
                 display: flex;
                 grid-column: 11/13;
                 grid-row: 3/12;
+                flex-wrap: wrap;
                 padding: 1em;
                 font-family: Arial, Helvetica, sans-serif;
             }
@@ -122,16 +124,16 @@
         </header>
         <nav class="nav">
             
-            <div class="button" onclick="test('html');">HTML</div>
-            <div class="button" onclick="test('css');">CSS</div>
-            <div class="button" onclick="test('js');">JavaScript</div>
+            <div class="button" onclick="show('html');">HTML</div>
+            <div class="button" onclick="show('css');">CSS</div>
+            <div class="button" onclick="show('javascript');">JavaScript</div>
 
         </nav>
 
-        <article class="left-article">
+        <article class="left-article" id="untermenue">
         </article>
 
-        <article class="article">
+        <article class="article" id="article">
         </article>
 
         <article class="right-article">
