@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        WWW-Navigator
+    </title>
+    <style>
+        @import url('https://fonts.cdnfonts.com/css/bauhaus-modern');
+        *{
+            box-sizing: border-box;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: 'Bauhaus Modern', sans-serif;
+            border-radius: 3px;
+        }
+        body {
+            background-color: #fefbea;
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 5em repeat(10, 1fr) 5em;
+            border: solid #b8e09a;
+            background-color: #b8e09a;
+        }
+        .header{
+            display: flex;
+            /* background-color: red; */
+            grid-column: 1/13;
+            grid-row: 5em;
+            justify-content: center;
+        }
+        .nav{
+            background-color: #b8e09a;
+            display: flex;
+            grid-column: 1/13;
+            justify-content: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .button{
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            border: solid thin #b8e09a;
+            border-radius: 0px;
+        }
+        .button:hover{
+            background-color: orange;
+        }
+        a{
+            text-decoration: none;
+        }
+        a .button{
+            display: flex;
+            color: white;
+            justify-content: center;
+        }
+        .button{
+            padding: 0.3em;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+        }
+        .article{
+            background-color: white;
+            display: flex;
+            grid-column: 1/13;
+            grid-row: 3/12;
+            padding: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .footer{
+            /* background-color: magenta; */
+            display: flex;
+            grid-column: 1/13;
+            grid-row: 12/13;
+            padding: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            align-items: center;
+        }
+        @media (min-width: 700px) {
+            .nav{
+                grid-column: 1/4;
+                grid-row: 5em/12;
+            }
+            .article{
+                grid-column: 4/13;
+                grid-row: 2/12;
+            }
+        }
+        @media (min-width: 1000px) {
+            .nav{
+                flex-direction: row;
+                grid-column: 1/13;
+                justify-content: center;
+            }
+            .article{
+                grid-column: 1/13;
+                grid-row: 3/12;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>WWW-Navigator</h1>
+        </header>
+        <nav class="nav">
+            
+            <a href="html/solution_1.html"><span class="button">HTML</span></a>
+            <a href="html/solution_1.html"><span class="button">CSS</span></a>
+            <a href="html/solution_1.html"><span class="button">JavaScript</span></a>
+
+        </nav>
+        <article class="article">
+        </article>
+        <footer class="footer">
+            Jonas Mager<br>
+            HS-BRS<br>
+            Einführung Webdesign (Prof. Dr. M. Kaul), WS 22/23
+        </footer>
+    </div>
+</body>
