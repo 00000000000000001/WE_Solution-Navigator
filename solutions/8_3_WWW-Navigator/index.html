@@ -9,7 +9,7 @@
             box-sizing: border-box;
             /* font-family: Arial, Helvetica, sans-serif; */
             font-family: 'Bauhaus Modern', sans-serif;
-            border-radius: 3px;
+            /* border-radius: 3px; */
         }
         body {
             background-color: #fefbea;
@@ -46,22 +46,18 @@
         .button:hover{
             background-color: orange;
         }
-        a{
-            text-decoration: none;
-        }
-        a .button{
+ 
+        .button{
             display: flex;
             color: white;
             justify-content: center;
-        }
-        .button{
             padding: 0.3em;
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
 
         .article{
-            background-color: white;
+            background-color: #fefbea;
             display: flex;
             grid-column: 3/12;
             grid-row: 3/12;
@@ -117,6 +113,7 @@
             }
         }
     </style>
+    <script type="text/javascript" src="./index.js"></script>
 </head>
 <body>
     <div class="container">
@@ -125,9 +122,9 @@
         </header>
         <nav class="nav">
             
-            <a href="html/solution_1.html"><span class="button">HTML</span></a>
-            <a href="html/solution_1.html"><span class="button">CSS</span></a>
-            <a href="html/solution_1.html"><span class="button">JavaScript</span></a>
+            <div class="button" onclick="test('html');">HTML</div>
+            <div class="button" onclick="test('css');">CSS</div>
+            <div class="button" onclick="test('js');">JavaScript</div>
 
         </nav>
 
