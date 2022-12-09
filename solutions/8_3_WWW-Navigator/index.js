@@ -4,7 +4,7 @@ function myfetch(filename) {
 	});
 }
 
-var data;
+let data;
 let map_content = new Map();
 let map_ref = new Map();
 

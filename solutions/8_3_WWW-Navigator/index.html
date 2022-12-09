@@ -17,7 +17,7 @@
         .container{
             display: grid;
             grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: 5em repeat(10, 1fr) 5em;
+            grid-template-rows: 5em 2em repeat(9, 1fr) 5em;
             border: solid #b8e09a;
             background-color: #b8e09a;
         }
@@ -59,11 +59,32 @@
         .article{
             background-color: #fefbea;
             display: flex;
-            grid-column: 3/12;
-            grid-row: 3/12;
+            grid-column: 1/13;
+            grid-row: 4/11;
             padding: 1em;
             font-family: Arial, Helvetica, sans-serif;
         }
+
+        .submenu{
+                /* background-color: red; */
+                display: flex;
+                grid-column: 1/13;
+                grid-row: 3/4;
+                flex-direction: column;
+                padding: 1em;
+                font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .references{
+            /* background-color: blue; */
+            display: flex;
+            grid-column: 1/13;
+            grid-row: 11/12;
+            flex-direction: column;
+            padding: 1em;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
         .footer{
             /* background-color: magenta; */
             display: flex;
@@ -77,12 +98,32 @@
 
         @media (min-width: 700px) {
             .nav{
+                /* background-color: aqua; */
                 grid-column: 1/4;
                 grid-row: 5em/12;
             }
             .article{
+                /* background-color: yellowgreen; */
                 grid-column: 4/13;
-                grid-row: 2/12;
+                grid-row: 3/12;
+            }
+            .submenu{
+                /* background-color: red; */
+                display: flex;
+                grid-column: 1/4;
+                grid-row: 3/4;
+                flex-direction: column;
+                padding: 1em;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .references{
+                /* background-color: blue; */
+                display: flex;
+                grid-column: 4/13;
+                grid-row: 11/12;
+                flex-direction: column;
+                padding: 1em;
+                font-family: Arial, Helvetica, sans-serif;
             }
         }
         @media (min-width: 1000px) {
@@ -95,21 +136,21 @@
                 grid-column: 3/12;
                 grid-row: 3/12;
             }
-            .left-article{
-                background-color: black;
+            .submenu{
+                /* background-color: red; */
                 display: flex;
-                grid-column: 1/4;
-                grid-row: 3/12;
+                grid-column: 1/3;
+                grid-row: 3/4;
                 flex-direction: column;
                 padding: 1em;
                 font-family: Arial, Helvetica, sans-serif;
             }
-            .right-article{
-                background-color: red;
+            .references{
+                /* background-color: blue; */
                 display: flex;
-                grid-column: 11/13;
+                grid-column: 12/13;
                 grid-row: 3/12;
-                flex-wrap: wrap;
+                flex-direction: column;
                 padding: 1em;
                 font-family: Arial, Helvetica, sans-serif;
             }
@@ -130,13 +171,13 @@
 
         </nav>
 
-        <article class="left-article" id="untermenue">
+        <article class="submenu" id="untermenue">
         </article>
 
         <article class="article" id="article">
         </article>
 
-        <article class="right-article" id="references">
+        <article class="references" id="references">
         </article>
 
         <footer class="footer">
