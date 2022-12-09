@@ -32,7 +32,7 @@
             background-color: #b8e09a;
             display: flex;
             grid-column: 1/13;
-            justify-content: center;
+            /* justify-content: center; */
             flex-direction: column;
             flex-wrap: wrap;
         }
@@ -59,10 +59,11 @@
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
+
         .article{
             background-color: white;
             display: flex;
-            grid-column: 1/13;
+            grid-column: 3/12;
             grid-row: 3/12;
             padding: 1em;
             font-family: Arial, Helvetica, sans-serif;
@@ -77,6 +78,7 @@
             font-size: 12px;
             align-items: center;
         }
+
         @media (min-width: 700px) {
             .nav{
                 grid-column: 1/4;
@@ -91,11 +93,27 @@
             .nav{
                 flex-direction: row;
                 grid-column: 1/13;
-                justify-content: center;
+                /* justify-content: center; */
             }
             .article{
-                grid-column: 1/13;
+                grid-column: 3/12;
                 grid-row: 3/12;
+            }
+            .left-article{
+                background-color: black;
+                display: flex;
+                grid-column: 1/4;
+                grid-row: 3/12;
+                padding: 1em;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .right-article{
+                background-color: black;
+                display: flex;
+                grid-column: 11/13;
+                grid-row: 3/12;
+                padding: 1em;
+                font-family: Arial, Helvetica, sans-serif;
             }
         }
     </style>
@@ -112,8 +130,16 @@
             <a href="html/solution_1.html"><span class="button">JavaScript</span></a>
 
         </nav>
+
+        <article class="left-article">
+        </article>
+
         <article class="article">
         </article>
+
+        <article class="right-article">
+        </article>
+
         <footer class="footer">
             Jonas Mager<br>
             HS-BRS<br>
