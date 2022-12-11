@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+    <style>
+    </style>
+    <script defer src="./index.js"></script>
+</head>
+
+<body>
+    <h1>9.2 Statistik-Balkendiagramm in SVG</h1>
+    <div id="diagramm"></div>
+    <p>
+        <svg width="520px" height="530px" viewBox="0,0,520,530">
+            <rect width="100%" height="100%" fill="gray" />
+            <!-- Striche -->
+            <!-- 
+                Höhe_Strich: Höhe Insgesamt - 50
+             -->
+            <line x1="60px" y1="50px" x2="60px" y2="480px" stroke="white" />
+            <line x1="110px" y1="50px" x2="110px" y2="480px" stroke="white" />
+            <line x1="160px" y1="50px" x2="160px" y2="480px" stroke="white" />
+            <line x1="210px" y1="50px" x2="210px" y2="480px" stroke="white" />
+            <line x1="260px" y1="50px" x2="260px" y2="480px" stroke="white" />
+            <line x1="310px" y1="50px" x2="310px" y2="480px" stroke="white" />
+            <line x1="360px" y1="50px" x2="360px" y2="480px" stroke="white" />
+            <line x1="410px" y1="50px" x2="410px" y2="480px" stroke="white" />
+            <line x1="460px" y1="50px" x2="460px" y2="480px" stroke="white" />
+            <line x1="510px" y1="50px" x2="510px" y2="480px" stroke="white" />
+            <!-- x-Bezeichnungen -->
+            <!-- 
+                y = Höhe_Strich + 25
+             -->
+            <text x="50" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">0</text>
+            <text x="100" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">5</text>
+            <text x="150" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">10</text>
+            <text x="200" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">15</text>
+            <text x="250" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">20</text>
+            <text x="300" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">25</text>
+            <text x="350" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">30</text>
+            <text x="400" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">35</text>
+            <text x="450" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">40</text>
+            <text x="500" y="505" fill="white" font-family="Arial, Helvetica, sans-serif">45</text>
+            <!-- y-Bezeichnungen -->
+            <!-- 
+                Abstand oben: 60
+                Abstamd unten: 70
+                Abstand: 25 (s. Benötigter PLatz Balken)
+                Reihen: 17
+                Höhe Insgesamt: (Reihen-1) * 25 + 60 + 70
+            -->
+            <foreignObject x="5" y="60" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Baden-Wuerttemberg
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="85" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Bayern
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="110" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Berlin
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="135" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Brandenburg
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="160" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Bremen
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="185" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Hamburg
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="210" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Hessen
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="235" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Mecklenburg-Vorpommern
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="260" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Niedersachsen
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="285" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Nordrhein-Westfalen
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="310" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Rheinland-Pfalz
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="335" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Saarland
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="360" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Sachsen
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="385" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Sachsen-Anhalt
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="410" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Schleswig-Holstein
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="435" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Thueringen
+                </div>
+            </foreignObject>
+            <foreignObject x="5" y="460" width="50px" height="300px" color="white" font-size="8px">
+                <div xmlns="http://www.w3.org/1999/xhtml">
+                    Gesamt
+                </div>
+            </foreignObject>
+            <!-- Balken -->
+            <!-- 
+                Dicke: 5
+                Anz.: 5
+                Benötigter Platz: Dicke * Anz. = 25
+             -->
+            <line x1="60px" y1="60px" x2="453px" y2="60px" stroke="red" stroke-width="5"/>
+            <line x1="60px" y1="65px" x2="345px" y2="65px" stroke="blue" stroke-width="5"/>
+            <line x1="60px" y1="70px" x2="234px" y2="70px" stroke="green" stroke-width="5"/>
+            <line x1="60px" y1="75px" x2="523px" y2="75px" stroke="yellow" stroke-width="5"/>
+            <line x1="60px" y1="80px" x2="134px" y2="80px" stroke="magenta" stroke-width="5"/>
+
+            <line x1="60px" y1="85px" x2="453px" y2="85px" stroke="red" stroke-width="5"/>
+            <line x1="60px" y1="90px" x2="453px" y2="90px" stroke="blue" stroke-width="5"/>
+            <line x1="60px" y1="95px" x2="453px" y2="95px" stroke="green" stroke-width="5"/>
+            <line x1="60px" y1="100px" x2="453px" y2="100px" stroke="yellow" stroke-width="5"/>
+            <line x1="60px" y1="105px" x2="453px" y2="105px" stroke="magenta" stroke-width="5"/>
+        </svg>
+    </p>
+</body>
