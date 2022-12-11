@@ -68,6 +68,45 @@ function render_all() {
     create_pieces();
 }
 
+function check_for_winner(){
+    let pieces = new Map();
+    pieces.set(1, 'circle');
+    pieces.set(2, 'cross');
+    if(arr[0][0] === arr[1][0] && arr[1][0] === arr[2][0]){
+        if(arr[0][0] !== 0){
+            alert(`${pieces.get(arr[0][0])} won`);
+        }   
+    } else if(arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1]){
+        if(arr[0][1] !== 0){
+            alert(`${pieces.get(arr[0][1])} won`);
+        }   
+    } else if(arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2]){
+        if(arr[0][2] !== 0){
+            alert(`${pieces.get(arr[0][2])} won`);
+        }   
+    } else if(arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2]){
+        if(arr[0][0] !== 0){
+            alert(`${pieces.get(arr[0][0])} won`);
+        }   
+    } else if(arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2]){
+        if(arr[1][0] !== 0){
+            alert(`${pieces.get(arr[1][0])} won`);
+        }   
+    } else if(arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2]){
+        if(arr[2][0] !== 0){
+            alert(`${pieces.get(arr[2][0])} won`);
+        }   
+    }  else if(arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2]){
+        if(arr[0][0] !== 0){
+            alert(`${pieces.get(arr[0][0])} won`);
+        }   
+    } else if(arr[2][0] === arr[1][1] && arr[1][1] === arr[0][2]){
+        if(arr[2][0] !== 0){
+            alert(`${pieces.get(arr[2][0])} won`);
+        }   
+    } 
+}
+
 function create_board() {
     const elem = document.getElementById('svg');
     elem.innerHTML += `
@@ -89,6 +128,7 @@ function create_board() {
         }
         player = !player;
         render_all();
+        check_for_winner();
     });
 }
 
