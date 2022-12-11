@@ -134,11 +134,11 @@ function create_bars(number) {
 
     // max = 7_599_255
     // width = 520px
-    let max = x_max();
-    let width = 520;
-    let div = max/(width-70);
+    const max = x_max();
+    const width = 520;
+    const div = max/(width-70);
 
-    let colors = ["red", "blue", "green", "yellow", "magenta", "white"];
+    const colors = ["red", "blue", "green", "yellow", "magenta", "white"];
 
     const svg = document.getElementById("svg");
     let y = 60;
@@ -147,7 +147,15 @@ function create_bars(number) {
         i = 0;
         Object.entries(value).forEach(([key, value]) => {
             svg.innerHTML += `
-            <line x1="60px" y1="${y}px" x2="${value/div+60}px" y2="${y}px" stroke="${colors[i++]}" stroke-width="5"/>
+            <line x1="60px" y1="${y}px" x2="${value/div+60}px" y2="${y}px" stroke="${colors[i++]}" stroke-width="5" id="barDef" class="barStyle">
+                <animate
+                    attributeName="x2"
+                    from="60"
+                    to="${value/div+60}"
+                    begin="0s"
+                    dur="1s"
+                    fill="freeze"/>
+            </line>
             `;
             y += 5;
         });
