@@ -76,31 +76,38 @@ function check_for_winner(){
         if(arr[0][0] !== 0){
             alert(`${pieces.get(arr[0][0])} won`);
         }   
-    } else if(arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1]){
+    } 
+    if(arr[0][1] === arr[1][1] && arr[1][1] === arr[2][1]){
         if(arr[0][1] !== 0){
             alert(`${pieces.get(arr[0][1])} won`);
         }   
-    } else if(arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2]){
+    }
+    if(arr[0][2] === arr[1][2] && arr[1][2] === arr[2][2]){
         if(arr[0][2] !== 0){
             alert(`${pieces.get(arr[0][2])} won`);
         }   
-    } else if(arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2]){
+    }
+    if(arr[0][0] === arr[0][1] && arr[0][1] === arr[0][2]){
         if(arr[0][0] !== 0){
             alert(`${pieces.get(arr[0][0])} won`);
         }   
-    } else if(arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2]){
+    }
+    if(arr[1][0] === arr[1][1] && arr[1][1] === arr[1][2]){
         if(arr[1][0] !== 0){
             alert(`${pieces.get(arr[1][0])} won`);
         }   
-    } else if(arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2]){
+    }
+    if(arr[2][0] === arr[2][1] && arr[2][1] === arr[2][2]){
         if(arr[2][0] !== 0){
             alert(`${pieces.get(arr[2][0])} won`);
         }   
-    }  else if(arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2]){
+    }
+    if(arr[0][0] === arr[1][1] && arr[1][1] === arr[2][2]){
         if(arr[0][0] !== 0){
             alert(`${pieces.get(arr[0][0])} won`);
         }   
-    } else if(arr[2][0] === arr[1][1] && arr[1][1] === arr[0][2]){
+    }
+    if(arr[2][0] === arr[1][1] && arr[1][1] === arr[0][2]){
         if(arr[2][0] !== 0){
             alert(`${pieces.get(arr[2][0])} won`);
         }   
