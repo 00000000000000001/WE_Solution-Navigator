@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .legend {
+            border: solid thin black;
+        }
+    </style>
+    <script defer src="./index.js"></script>
+</head>
+
+<body>
+    <h1>10.2. Fehler finden mit TypeScript</h1>
+
+    <p>
+    <h2>Fehlerhafter Code:</h2>
+    <pre>
+        const add = (x,y) => x+y;
+        const equals = (x,y) => x===y;
+
+        console.log( add(1,2) );
+        console.log( add(true, true ) );
+        console.log( add(true, false ) );
+        var x = y = 1;
+        console.log( add(equals(x,y), equals(y,x)) );
+    </pre>
+    <h2>Compiler-Fehler:</h2>
+    <ul>
+        <li>
+            <code>Parameter 'x' implicitly has an 'any' type.(7006)</code>
+        </li>
+        <li>
+            <code>Parameter 'y' implicitly has an 'any' type.(7006)</code>
+        </li>
+        <li>
+            <code>Cannot find name 'y'.(2304)</code>
+        </li>
+    </ul>
+    <h2>Korrektur:</h2>
+    <pre>
+        const add = (x:number,y:number) => x+y;
+        const equals = (x:any,y:any) => x===y;
+
+        console.log( add(1,2) );
+        console.log( add(true, true ) );
+        console.log( add(true, false ) );
+        var y:number;
+        var x:number = y = 1;
+        console.log( add(equals(x,y), equals(y,x)) );
+    </pre>
+    <h2>Compiler-Fehler:</h2>
+    <ul>
+        <li>
+            <code>Argument of type 'boolean' is not assignable to parameter of type 'number'.(2345)</code>
+        </li>
+    </ul>
+    </p>
+</body>
