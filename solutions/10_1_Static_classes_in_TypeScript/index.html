@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        .legend {
+            border: solid thin black;
+        }
+    </style>
+    <script defer src="./index.js"></script>
+</head>
+
+<body>
+    <h1>10.1. Static classes in TypeScript</h1>
+    Gibt es in TypeScript statische Klassen?
+    Erläutern Sie den Unterschied von TypeScript zu anderen
+    objekt-orientierten, statisch typisierten Programmiersprachen
+    wie Java und C#.
+    <p>
+        Antwort: Eine statische Klasse ist eine Klasse,
+        die lediglich statische Funktionen, Variablen und
+        Eigenschaften enthalten. Ein Beispiel für eine
+        solche Klasse aus C# oder Javaist die Klasse Math.
+        Durch das Schlüsselwort static vor dem Schlüsselwort
+        class darf die Klasse keine nicht-statische Funktionen,
+        Variablen und Eigenschaften
+        enthalten. Dies ist hilfreich, um eine Initialisierung
+        der Klasse als Objekt (dies wird auch als Objekt-Instanziierung
+        bezeichnet) zu verbieten. Statische Klassen werden gerne verwendet,
+        um Hilfs-Funktionen in einer Klasse zu kapseln.
+        [https://www.das-grosse-computer-abc.de/CSharp/Objektorientierung/Statische-Klassen]
+        <br>
+        JavaScript kennt kein Klassenkonzept und Sie müssen nicht einmal Objekte definieren,
+        um Programme zu erstellen. Das Schlüsselwort static in ES6 definiert
+        statische Methoden oder Porpoerties. Die Instanzierung einer Klasse mit
+        statischen Methoden und Properties wird von JS nicht verhindert.
+        Der Effekt einer statischen Klassen kann nur bis zu einem begrenzten
+        Anteil von TypeScript nachgeahmt werden. Beispiel:
+        <code>
+            class Circle {
+                static pi: number = 3.14;
+                name: string = "Pi";
+            }
+            // statischer Zugriff
+            console.log(Circle.pi);
+            // Zugriff über Instanz
+            let c = new Circle();
+            console.log(c);
+        </code>
+        Der TS Compiler macht daraus:
+        <code>
+            var Circle = /** @class */ (function () {
+                function Circle() {
+                    this.name = "Pi";
+                }
+                Circle.pi = 3.14;
+                return Circle;
+            }());
+            // statischer Zugriff
+            console.log(Circle.pi);
+            // Zugriff über Instanz
+            var c = new Circle();
+            console.log(c);
+        </code>
+    </p>
+</body>
