@@ -21,11 +21,9 @@ function fetch_txt(filename) {
     });
 }
 
-async function f1(title) {
-    const a = await fetch_txt("daten.json");
+async function diagram(file, title) {
+    const a = await fetch_txt(file);
     print_entries(a);
-    console.log(groups);
-    // console.log();
 
     // Balken
     // - Dicke: 5
@@ -201,4 +199,4 @@ function create_legende(categories, number){
     }
 }
 
-f1('Elektronisch übermittelte Daten');
+diagram('daten.json','Elektronisch übermittelte Daten');

@@ -1,114 +1,14 @@
 {
-    "Baden-Wuerttemberg": {
-        "Anzahl": 4917977,
-        "Differenz": 3087,
-        "Faelle": 15753,
-        "Inzidenz": 141.6,
-        "Todesfaelle": 18313
+    "Jonas": {
+        "Intelligenz": 3453,
+        "Gutes Aussehen": 5343,
+        "Erfolg": 7854,
+        "Bauchumfang": 141.6
     },
-    "Bayern": {
-        "Anzahl": 6559768,
-        "Differenz": 2525,
-        "Faelle": 15364,
-        "Inzidenz": 116.6,
-        "Todesfaelle": 18313
-    },
-    "Berlin": {
-        "Anzahl": 1373849,
-        "Differenz": 1515,
-        "Faelle":  	8654,
-        "Inzidenz": 235.3,
-        "Todesfaelle": 5174
-    },
-    "Brandenburg": {
-        "Anzahl": 1070636,
-        "Differenz": 1901,
-        "Faelle": 9152,
-        "Inzidenz": 360.6,
-        "Todesfaelle": 6219
-    },
-    "Bremen": {
-        "Anzahl": 289203,
-        "Differenz": 365,
-        "Faelle": 2412,
-        "Inzidenz": 356.6,
-        "Todesfaelle": 894
-    },
-    "Hamburg": {
-        "Anzahl": 783052,
-        "Differenz": 890,
-        "Faelle": 3859,
-        "Inzidenz": 208.2,
-        "Todesfaelle": 3283
-    },
-    "Hessen": {
-        "Anzahl": 2806053,
-        "Differenz": 2015,
-        "Faelle": 11031,
-        "Inzidenz": 175.2,
-        "Todesfaelle": 11769
-    },
-    "Mecklenburg-Vorpommern": {
-        "Anzahl": 682175,
-        "Differenz": 955,
-        "Faelle": 6117,
-        "Inzidenz": 379.7,
-        "Todesfaelle": 2602
-    },
-    "Niedersachsen": {
-        "Anzahl": 3640458,
-        "Differenz": 6435,
-        "Faelle": 34659,
-        "Inzidenz": 431.8,
-        "Todesfaelle": 11943
-    },
-    "Nordrhein-Westfalen": {
-        "Anzahl": 7599255,
-        "Differenz": 9050,
-        "Faelle": 44591,
-        "Inzidenz": 248.8,
-        "Todesfaelle": 29249
-    },
-    "Rheinland-Pfalz": {
-        "Anzahl": 1694488,
-        "Differenz": 2340,
-        "Faelle": 6133,
-        "Inzidenz": 149.3,
-        "Todesfaelle": 6586
-    },
-    "Saarland": {
-        "Anzahl": 472344,
-        "Differenz": 349,
-        "Faelle": 2155,
-        "Inzidenz": 219.4,
-        "Todesfaelle": 1984
-    },
-    "Sachsen": {
-        "Anzahl": 1909359,
-        "Differenz": 1663,
-        "Faelle": 7494,
-        "Inzidenz": 185.4,
-        "Todesfaelle": 16425
-    },
-    "Sachsen-Anhalt": {
-        "Anzahl": 932373,
-        "Differenz": 917,
-        "Faelle": 5023,
-        "Inzidenz": 231.6,
-        "Todesfaelle": 6060
-    },
-    "Schleswig-Holstein": {
-        "Anzahl": 1129411,
-        "Differenz": 1473,
-        "Faelle": 8190,
-        "Inzidenz": 280.3,
-        "Todesfaelle": 3190
-    },
-    "Thüringen": {
-        "Anzahl": 865660,
-        "Differenz": 346,
-        "Faelle": 2413,
-        "Inzidenz": 114.4,
-        "Todesfaelle": 7946
+    "Wiebke Adams": {
+        "Intelligenz": 443,
+        "Gutes Aussehen": 64,
+        "Erfolg": 1573,
+        "Bauchumfang": 4511.6
     }
 }

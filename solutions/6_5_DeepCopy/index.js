@@ -1,4 +1,19 @@
 /*
+
+   So iteriert man durch ein Object mit Objecten:
+
+   function print_entries( entry ){
+    for (const [key, value] of Object.entries(entry)) {
+        console.log(`${key}: ${value}`);
+        if (typeof(value) === "object"){
+            print_entries(value);
+        }
+    }
+}
+
+*/
+
+/*
 6.5. DeepCopy
 
 Schreiben Sie eine rekursive Funktion deepCopy( struct ) als ES6-Ausdruck, sodass beliebig geschachtelte Arrays und Objekte tiefenkopiert werden können.

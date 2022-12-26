@@ -7,7 +7,8 @@ function create_svg() {
 }
 
 function svgTransform(domX, domY, svgElement) {
-    const svgPoint = svgElement.createSVGPoint(); svgPoint.x = domX;
+    const svgPoint = svgElement.createSVGPoint(); 
+    svgPoint.x = domX;
     svgPoint.y = domY;
     return svgPoint.matrixTransform(svgElement.getScreenCTM().inverse());
 }

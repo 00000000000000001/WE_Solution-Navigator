@@ -1,0 +1,114 @@
+{
+    "Baden-Württemberg": {
+        "Anzahl": 4917977,
+        "Differenz": 3087,
+        "Fälle": 15753,
+        "Inzidenz": 141.6,
+        "Todesfälle": 18313
+    },
+    "Bayern": {
+        "Anzahl": 6559768,
+        "Differenz": 2525,
+        "Fälle": 15364,
+        "Inzidenz": 116.6,
+        "Todesfälle": 18313
+    },
+    "Berlin": {
+        "Anzahl": 1373849,
+        "Differenz": 1515,
+        "Fälle":  	8654,
+        "Inzidenz": 235.3,
+        "Todesfälle": 5174
+    },
+    "Brandenburg": {
+        "Anzahl": 1070636,
+        "Differenz": 1901,
+        "Fälle": 9152,
+        "Inzidenz": 360.6,
+        "Todesfälle": 6219
+    },
+    "Bremen": {
+        "Anzahl": 289203,
+        "Differenz": 365,
+        "Fälle": 2412,
+        "Inzidenz": 356.6,
+        "Todesfälle": 894
+    },
+    "Hamburg": {
+        "Anzahl": 783052,
+        "Differenz": 890,
+        "Fälle": 3859,
+        "Inzidenz": 208.2,
+        "Todesfälle": 3283
+    },
+    "Hessen": {
+        "Anzahl": 2806053,
+        "Differenz": 2015,
+        "Fälle": 11031,
+        "Inzidenz": 175.2,
+        "Todesfälle": 11769
+    },
+    "Mecklenburg-Vorpommern": {
+        "Anzahl": 682175,
+        "Differenz": 955,
+        "Fälle": 6117,
+        "Inzidenz": 379.7,
+        "Todesfälle": 2602
+    },
+    "Niedersachsen": {
+        "Anzahl": 3640458,
+        "Differenz": 6435,
+        "Fälle": 34659,
+        "Inzidenz": 431.8,
+        "Todesfälle": 11943
+    },
+    "Nordrhein-Westfalen": {
+        "Anzahl": 7599255,
+        "Differenz": 9050,
+        "Fälle": 44591,
+        "Inzidenz": 248.8,
+        "Todesfälle": 29249
+    },
+    "Rheinland-Pfalz": {
+        "Anzahl": 1694488,
+        "Differenz": 2340,
+        "Fälle": 6133,
+        "Inzidenz": 149.3,
+        "Todesfälle": 6586
+    },
+    "Saarland": {
+        "Anzahl": 472344,
+        "Differenz": 349,
+        "Fälle": 2155,
+        "Inzidenz": 219.4,
+        "Todesfälle": 1984
+    },
+    "Sachsen": {
+        "Anzahl": 1909359,
+        "Differenz": 1663,
+        "Fälle": 7494,
+        "Inzidenz": 185.4,
+        "Todesfälle": 16425
+    },
+    "Sachsen-Anhalt": {
+        "Anzahl": 932373,
+        "Differenz": 917,
+        "Fälle": 5023,
+        "Inzidenz": 231.6,
+        "Todesfälle": 6060
+    },
+    "Schleswig-Holstein": {
+        "Anzahl": 1129411,
+        "Differenz": 1473,
+        "Fälle": 8190,
+        "Inzidenz": 280.3,
+        "Todesfälle": 3190
+    },
+    "Thüringen": {
+        "Anzahl": 865660,
+        "Differenz": 346,
+        "Fälle": 2413,
+        "Inzidenz": 114.4,
+        "Todesfälle": 7946
+    }
+}
