@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-<meta charset="utf-8">
 
+<head>
+    <meta charset="utf-8">
+    <script src="index.js"></script>
+    
     <title>
         Solution-Navigator: Main Page
     </title>
     <style>
         @import url('https://fonts.cdnfonts.com/css/bauhaus-modern');
-        *{
+
+        * {
             box-sizing: border-box;
             /* font-family: Arial, Helvetica, sans-serif; */
-            font-family: 'Bauhaus Modern', sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
+
             border-radius: 3px;
         }
-        .container{
+
+        .container {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
             grid-template-rows: 5em repeat(10, 1fr) 5em;
             border: solid #b8e09a;
             background-color: #b8e09a;
         }
-        .header{
+
+        .header {
             display: flex;
             /* background-color: red; */
             grid-column: 1/13;
             grid-row: 5em;
             justify-content: center;
         }
-        .nav{
+
+        .nav {
             background-color: #b8e09a;
             display: flex;
             grid-column: 1/13;
@@ -36,77 +43,87 @@
             flex-direction: column;
             flex-wrap: wrap;
         }
-        .button{
+
+        .button {
             background-color: black;
             display: flex;
             justify-content: center;
             border: solid thin #b8e09a;
             border-radius: 0px;
         }
-        .button:hover{
+
+        .button:hover {
             background-color: orange;
         }
-        a{
+
+        a {
             text-decoration: none;
         }
-        a .button{
+
+        a .button {
             display: flex;
             color: white;
             justify-content: center;
         }
-        .button{
+
+        .button {
             padding: 0.3em;
             padding-left: 0.5em;
             padding-right: 0.5em;
         }
-        .article{
+
+        .article {
             background-color: #fefbea;
             display: flex;
             grid-column: 1/13;
             grid-row: 3/12;
             padding: 1em;
-            font-family: Arial, Helvetica, sans-serif;
         }
-        .footer{
+
+        .footer {
             /* background-color: magenta; */
             display: flex;
             grid-column: 1/13;
             grid-row: 12/13;
             padding: 1em;
-            font-family: Arial, Helvetica, sans-serif;
             font-size: 12px;
             align-items: center;
         }
+
         @media (min-width: 700px) {
-            .nav{
+            .nav {
                 grid-column: 1/4;
                 grid-row: 5em/12;
             }
-            .article{
+
+            .article {
                 grid-column: 4/13;
                 grid-row: 2/12;
             }
         }
+
         @media (min-width: 1000px) {
-            .nav{
+            .nav {
                 flex-direction: row;
                 grid-column: 1/13;
                 justify-content: center;
             }
-            .article{
+
+            .article {
                 grid-column: 1/13;
                 grid-row: 3/12;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header class="header">
             <h1>Solution-Navigator</h1>
         </header>
         <nav class="nav">
-            
+
             <!-- <a href="html/solution_1.html"><span class="button">KW 39</span></a>
             <a href="html/solution_1.html"><span class="button">KW 40</span></a>
             <a href="html/solution_1.html"><span class="button">KW 41</span></a>
@@ -126,10 +143,7 @@
 
         </nav>
         <article class="article">
-            <p>
-                TODO:<br>
-                - https://www.w3schools.com/howto/howto_css_dropdown.asp
-            </p>
+            <div id="main"></div>
         </article>
         <footer class="footer">
             Jonas Mager<br>
