@@ -12,19 +12,29 @@
         @import url('https://fonts.cdnfonts.com/css/bauhaus-modern');
 
         * {
+            /* border: dotted thin black; */
             box-sizing: border-box;
             /* font-family: Arial, Helvetica, sans-serif; */
             font-family: Arial, Helvetica, sans-serif;
 
-            border-radius: 3px;
+            /* border-radius: 3px; */
+        }
+
+        body{
+            background-color: #fefbea;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: 5em 2em repeat(9, 1fr) 5em;
+
         }
 
         .container {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            grid-template-rows: 5em repeat(10, 1fr) 5em;
-            border: solid #b8e09a;
-            background-color: #b8e09a;
+            /* border: solid #b8e09a; */
+            background-color: #fefbea;
+            grid-column: 3 / 11;
+            grid-row: 1 / 13;
+            /* border: solid thin black; */
+
         }
 
         .header {
@@ -36,7 +46,7 @@
         }
 
         .nav {
-            background-color: #b8e09a;
+            background-color: #fefbea;
             display: flex;
             grid-column: 1/13;
             justify-content: center;
@@ -48,7 +58,7 @@
             background-color: black;
             display: flex;
             justify-content: center;
-            border: solid thin #b8e09a;
+            border: solid thin #fefbea;
             border-radius: 0px;
         }
 
@@ -62,7 +72,7 @@
 
         a .button {
             display: flex;
-            color: white;
+            color: #fefbea;
             justify-content: center;
         }
 
@@ -88,6 +98,7 @@
             padding: 1em;
             font-size: 12px;
             align-items: center;
+            
         }
 
         @media (min-width: 700px) {
@@ -124,7 +135,7 @@
         </header>
         <nav class="nav">
 
-            <!-- <a href="html/solution_1.html"><span class="button">KW 39</span></a>
+            <a href="html/solution_1.html"><span class="button">KW 39</span></a>
             <a href="html/solution_1.html"><span class="button">KW 40</span></a>
             <a href="html/solution_1.html"><span class="button">KW 41</span></a>
             <a href="html/solution_1.html"><span class="button">KW 42</span></a>
@@ -139,7 +150,7 @@
             <a href="html/solution_1.html"><span class="button">KW 51</span></a>
             <a href="html/solution_1.html"><span class="button">KW 01</span></a>
             <a href="html/solution_1.html"><span class="button">KW 02</span></a>
-            <a href="html/solution_1.html"><span class="button">KW 03</span></a> -->
+            <a href="html/solution_1.html"><span class="button">KW 03</span></a>
 
         </nav>
         <article class="article">

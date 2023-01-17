@@ -14,7 +14,6 @@ fetch('solutions/1_1_Fachliche_Argumentation_ueber_Erfolgsprinzipien_des_WWW/ind
                         eval(r);
                     })
                 });
-
             }
             // To not repeat the element
             scripts[i].parentNode.removeChild(scripts[i]);
