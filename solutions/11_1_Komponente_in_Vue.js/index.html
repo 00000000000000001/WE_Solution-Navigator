@@ -10,21 +10,35 @@
         new Vue({
             el: '#app',
             data: {
-                title: '0'
+                count: 0,
+                spaces: 0,
+                words: 0
             },
             methods: {
-                world: function(){
-                    this.title = document.getElementById('text').value.length;
-                }
+                countings: function () {
+                    this.count = document.getElementById('text').value.length;
+                    if (document.getElementById('text').value.match(/\S+/g) !== null)
+                        this.words = document.getElementById('text').value.match(/\S+/g).length;
+                    else
+                        this.words = 0;
+
+                    if (document.getElementById('text').value.match(/\s/g) !== null)
+                        this.spaces = document.getElementById('text').value.match(/\s/g).length;
+                    else
+                        this.spaces = 0;
+
+                },
             }
         });
     </script>
 </head>
 
 <body>
-    <div id="app">        
-        <input type="TEXTFIELD" @keyup="world" id="text"/>
-        <p>{{title}}</p>
+    <div id="app">
+        <input type="TEXTFIELD" @keyup="countings" id="text" />
+        <p>count: {{ count }}</p>
+        <p>spaces: {{ spaces }}</p>
+        <p>words: {{ words }}</p>
     </div>
 </body>
 
