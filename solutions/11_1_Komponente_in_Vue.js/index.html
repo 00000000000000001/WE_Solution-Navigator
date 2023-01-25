@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+    <meta charset="utf-8">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
+
+    <script type="module">
+        new Vue({
+            el: '#app',
+            data: {
+                title: '0'
+            },
+            methods: {
+                world: function(){
+                    this.title = document.getElementById('text').value.length;
+                }
+            }
+        });
+    </script>
+</head>
+
+<body>
+    <div id="app">        
+        <input type="TEXTFIELD" @keyup="world" id="text"/>
+        <p>{{title}}</p>
+    </div>
+</body>
+
+</html>
