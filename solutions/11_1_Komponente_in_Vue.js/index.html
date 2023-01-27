@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="de">
 
-
 <head>
     <meta charset="utf-8">
     <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.1.6/vue.min.js"></script>
-
     <script type="module">
         new Vue({
             el: '#app',
             data: {
+                myText: '',
                 count: 0,
                 spaces: 0,
                 words: 0
             },
             methods: {
                 countings: function () {
-                    this.count = document.getElementById('text').value.length;
-                    if (document.getElementById('text').value.match(/\S+/g) !== null)
-                        this.words = document.getElementById('text').value.match(/\S+/g).length;
+                    this.count = this.myText.length;
+                    if (this.myText.match(/\S+/g) !== null)
+                        this.words = this.myText.match(/\S+/g).length;
                     else
                         this.words = 0;
-
-                    if (document.getElementById('text').value.match(/\s/g) !== null)
-                        this.spaces = document.getElementById('text').value.match(/\s/g).length;
+                    if (this.myText.match(/\s/g) !== null)
+                        this.spaces = this.myText.match(/\s/g).length;
                     else
                         this.spaces = 0;
 
@@ -35,7 +33,7 @@
 
 <body>
     <div id="app">
-        <input type="TEXTFIELD" @keyup="countings" id="text" />
+        <input v-model="myText" type="TEXTFIELD" @keyup="countings" id="text" />
         <p>count: {{ count }}</p>
         <p>spaces: {{ spaces }}</p>
         <p>words: {{ words }}</p>

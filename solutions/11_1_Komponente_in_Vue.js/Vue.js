@@ -7,5 +7,14 @@ Betten Sie Ihre Komponente in eine Webseite zweimal ein und testen Sie, ob beide
 unabhängig voneinander sind. 
 */
 
+
+import MyComponent from './solution.vue';
+
+export default {
+  components: {
+    solution
+  }
+}
+
 let eingabe = document.createElement('input');
 eingabe.type = 'textfield';
